@@ -120,14 +120,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CArticle.cpp" />
+    <ClCompile Include="Ccommande.cpp" />
+    <ClCompile Include="Client.cpp" />
     <ClCompile Include="GArticle.cpp" />
     <ClCompile Include="Gclient.cpp" />
     <ClCompile Include="Gcommande.cpp" />
     <ClCompile Include="Gpersonnel.cpp" />
     <ClCompile Include="Gstatistique.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="CPersonne.cpp" />
+    <ClCompile Include="CPersonnel.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CArticle.h" />
+    <ClInclude Include="Ccommande.h" />
+    <ClInclude Include="Client.h" />
     <ClInclude Include="GArticle.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -146,6 +154,8 @@
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="CPersonne.h" />
+    <ClInclude Include="CPersonnel.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
