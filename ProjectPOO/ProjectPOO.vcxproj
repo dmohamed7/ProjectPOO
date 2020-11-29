@@ -158,6 +158,21 @@
     <ClInclude Include="CPersonnel.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GArticle.resx">
+      <DependentUpon>GArticle.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gclient.resx">
+      <DependentUpon>Gclient.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gcommande.resx">
+      <DependentUpon>Gcommande.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gpersonnel.resx">
+      <DependentUpon>Gpersonnel.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gstatistique.resx">
+      <DependentUpon>Gstatistique.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>

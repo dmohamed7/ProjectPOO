@@ -1,11 +1,9 @@
 #include "Client.h"
+#include<iostream>
+#include<string>
+using namespace std;
+using namespace System;
 
-void Client::setDATE_Naissance(int j, int m, int a)
-{
-	this->date_naissance->jour = j;
-	this->date_naissance->mois = m;
-	this->date_naissance->année = a;
-}
 
 void Client::setAdd_facturation(String^ adresse)
 {
@@ -17,11 +15,21 @@ void Client::setadd_livraison(String^ adresse)
 	this->add_livraison = adresse;
 }
 
+
+
+void Client::setVille(String^ v)
+{
+	this->ville = v;
+}
+
 Client::Client()
 {
-	this->date_naissance->jour = 0;
-	this->date_naissance->mois = 0;
-	this->date_naissance->année = 0;
+
+	this->ville = "";
+	this->add_facturation = "";
+	this->add_livraison = "";
+
+
 }
 
 String^ Client::getadd_livraison()
@@ -34,9 +42,10 @@ String^ Client::getadd_facturation()
 	return this->add_facturation;
 }
 
-int Client::getDate_naissance()
+String^ Client::getVille()
 {
-	return this->date_naissance->jour;
-	return this->date_naissance->mois;
-	return this->date_naissance->année;
+	return this->ville;
 }
+
+
+

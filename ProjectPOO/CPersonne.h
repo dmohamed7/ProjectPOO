@@ -17,10 +17,10 @@ public:
 	void setNom(String^ n);
 	void setPrenom(String^ P);
 	CPersonne();
-	void creer();
-	void modifier();
-	void supprimer();
-	void afficher();
+	//void creer();
+	//void modifier();
+	//void supprimer();
+	//void afficher();
 
 
 	

@@ -69,8 +69,11 @@ namespace ProjectPOO {
 			// 
 			// button1
 			// 
+			this->button1->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->button1->BackColor = System::Drawing::SystemColors::Highlight;
-			this->button1->Location = System::Drawing::Point(907, 12);
+			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->button1->ImageAlign = System::Drawing::ContentAlignment::TopRight;
+			this->button1->Location = System::Drawing::Point(12, 420);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(165, 77);
 			this->button1->TabIndex = 0;
@@ -81,7 +84,7 @@ namespace ProjectPOO {
 			// button2
 			// 
 			this->button2->ForeColor = System::Drawing::Color::DarkGreen;
-			this->button2->Location = System::Drawing::Point(907, 95);
+			this->button2->Location = System::Drawing::Point(227, 420);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(165, 77);
 			this->button2->TabIndex = 1;
@@ -91,7 +94,7 @@ namespace ProjectPOO {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(907, 178);
+			this->button3->Location = System::Drawing::Point(627, 420);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(165, 77);
 			this->button3->TabIndex = 2;
@@ -101,7 +104,7 @@ namespace ProjectPOO {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(907, 261);
+			this->button4->Location = System::Drawing::Point(425, 420);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(165, 77);
 			this->button4->TabIndex = 3;
@@ -111,12 +114,13 @@ namespace ProjectPOO {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(907, 344);
+			this->button5->Location = System::Drawing::Point(841, 420);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(165, 77);
 			this->button5->TabIndex = 4;
 			this->button5->Text = L"GESTION DE STATISTIQUE";
 			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Visible = false;
 			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
 			// 
 			// MyForm
@@ -124,13 +128,14 @@ namespace ProjectPOO {
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
-			this->ClientSize = System::Drawing::Size(1334, 509);
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(1033, 524);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
+			this->DoubleBuffered = true;
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);

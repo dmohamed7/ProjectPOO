@@ -32,4 +32,7 @@ int CPersonnel::date()
 		cout << "Mois: " << m << endl;
 		j = ltm->tm_mday;
 		cout << "jour: " << j << endl;
+		return a;
+		return m;
+		return j;
 }
