@@ -28,7 +28,7 @@ Client::Client()
 	this->ville = "";
 	this->add_facturation = "";
 	this->add_livraison = "";
-
+	
 
 }
 
