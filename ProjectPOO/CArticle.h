@@ -1,7 +1,6 @@
 #pragma once
 #include<iostream>
 #include<string>
-using namespace std;
 using namespace System;
 ref class CArticle
 {protected:
@@ -11,6 +10,7 @@ ref class CArticle
 	double prix_uht;
 	double prix_TTC;
 	double TVA;
+	String^ nature_article;
 public:
 	void setRef_article(String^ REF);
 	void setNom_article(String^ N);

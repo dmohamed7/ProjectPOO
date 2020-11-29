@@ -13,7 +13,4 @@ private:
 	String^ moyen_payment;
 	Date* date_livraison;
 	Date* date_emmision;
-	Date* D_solde;
-
-
 };

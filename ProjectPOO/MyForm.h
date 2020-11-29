@@ -4,6 +4,9 @@
 #include "GArticle.h"
 #include "Gcommande.h"
 #include "Gstatistique.h"
+#include "CPersonne.h"
+using namespace System::Data::SqlClient;
+
 
 namespace ProjectPOO {
 
@@ -44,6 +47,7 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ button6;
 	protected:
 
 	private:
@@ -65,6 +69,7 @@ namespace ProjectPOO {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -123,6 +128,16 @@ namespace ProjectPOO {
 			this->button5->Visible = false;
 			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
 			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(841, 137);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(83, 48);
+			this->button6->TabIndex = 5;
+			this->button6->Text = L"button6";
+			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -130,6 +145,7 @@ namespace ProjectPOO {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1033, 524);
+			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
@@ -169,6 +185,27 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 	GArticle^ gart = gcnew GArticle;
 	gart->Show();
+}
+private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+	CPersonne^ cl = gcnew CPersonne;
+	cl->setNom("Hmo");
+	cl->setPrenom("dangerous");
+	String^ constring = "Data Source=(local);Initial Catalog=test;Integrated Security=True";
+	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
+	SqlCommand^ cmdDataBase = gcnew SqlCommand("INSERT INTO Table_Client (nom , prenom ) values ('" + cl->getNom() + "','" + cl->getPrenom() + "' ); ", conDataBase);
+	SqlDataReader^ myReader;
+	try {
+
+		conDataBase->Open();
+		myReader = cmdDataBase->ExecuteReader();
+		MessageBox::Show("Article enregistré :'D");
+	}
+	catch (Exception^ ex) {
+
+		MessageBox::Show(ex->Message);
+
+	}
+	
 }
 };
 }
