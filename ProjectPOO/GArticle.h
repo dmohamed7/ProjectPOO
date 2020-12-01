@@ -55,11 +55,13 @@ namespace ProjectPOO {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::White;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->ClientSize = System::Drawing::Size(907, 509);
 			this->DoubleBuffered = true;
 			this->Name = L"GArticle";
+			this->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->Text = L"GArticle";
 			this->ResumeLayout(false);
 

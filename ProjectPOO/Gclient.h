@@ -100,45 +100,64 @@ namespace ProjectPOO {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(74, 386);
+			this->button1->FlatAppearance->BorderSize = 0;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
+			this->button1->Location = System::Drawing::Point(91, 358);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(117, 57);
+			this->button1->Size = System::Drawing::Size(83, 95);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"ajouter";
+			this->button1->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &Gclient::button1_Click);
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(263, 386);
+			this->button2->FlatAppearance->BorderSize = 0;
+			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.Image")));
+			this->button2->Location = System::Drawing::Point(282, 372);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(117, 57);
+			this->button2->Size = System::Drawing::Size(82, 81);
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"Afficher";
+			this->button2->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &Gclient::button2_Click);
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(460, 386);
+			this->button3->FlatAppearance->BorderSize = 0;
+			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.Image")));
+			this->button3->Location = System::Drawing::Point(487, 358);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(117, 57);
+			this->button3->Size = System::Drawing::Size(80, 95);
 			this->button3->TabIndex = 2;
-			this->button3->Text = L"button3";
+			this->button3->Text = L"Modifier";
+			this->button3->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->button3->UseVisualStyleBackColor = true;
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(681, 386);
+			this->button4->FlatAppearance->BorderSize = 0;
+			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button4.Image")));
+			this->button4->Location = System::Drawing::Point(678, 358);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(117, 57);
+			this->button4->Size = System::Drawing::Size(117, 95);
 			this->button4->TabIndex = 3;
-			this->button4->Text = L"button4";
+			this->button4->Text = L"Supprimer";
+			this->button4->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->button4->UseVisualStyleBackColor = true;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
+				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->label1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label1->Location = System::Drawing::Point(12, 69);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(54, 17);
@@ -212,7 +231,11 @@ namespace ProjectPOO {
 			// 
 			// label5
 			// 
+			this->label5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->label5->AutoSize = true;
+			this->label5->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->label5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->label5->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->label5->Location = System::Drawing::Point(753, 49);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(21, 17);
@@ -231,6 +254,7 @@ namespace ProjectPOO {
 			// 
 			// dataGridView2
 			// 
+			this->dataGridView2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView2->Location = System::Drawing::Point(625, 104);
 			this->dataGridView2->Name = L"dataGridView2";
@@ -241,11 +265,13 @@ namespace ProjectPOO {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(586, 49);
+			this->button5->FlatAppearance->BorderSize = 0;
+			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button5.Image")));
+			this->button5->Location = System::Drawing::Point(639, 53);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(99, 49);
+			this->button5->Size = System::Drawing::Size(66, 49);
 			this->button5->TabIndex = 16;
-			this->button5->Text = L"afficher tout";
 			this->button5->UseVisualStyleBackColor = true;
 			this->button5->Click += gcnew System::EventHandler(this, &Gclient::button5_Click);
 			// 
@@ -253,6 +279,7 @@ namespace ProjectPOO {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::SystemColors::ActiveBorder;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->ClientSize = System::Drawing::Size(904, 509);
