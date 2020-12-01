@@ -302,7 +302,7 @@ private: System::Void Ajouter_Click(System::Object^ sender, System::EventArgs^ e
 
 		conDataBase->Open();
 		myReader = cmdDataBase->ExecuteReader();
-		MessageBox::Show("Article enregistré :'D");
+		MessageBox::Show("personnel enregistré ");
 	}
 	catch (Exception^ ex) {
 

@@ -20,6 +20,7 @@ namespace NS_Composants
 		void setVille(String^ v);
 		void setDate(String^ a);
 		void setDate2(String^ a);
+		String^ creer(String^, String^, String^, String^);
 
 		Client();
 		String^ getadd_livraison();

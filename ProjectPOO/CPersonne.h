@@ -13,10 +13,13 @@ namespace NS_Composants
 		String^ nom;
 		String^ prenom;
 		String^ date;
+		int ID;
 	public:
 		 String^ getDate();
 		String^ getNom();
 		String^ getPrenom();
+		int getID();
+		void setID(int id);
 		void setNom(String^ n);
 		void setPrenom(String^ P);
 	    void setDate(String^ a);
@@ -24,7 +27,7 @@ namespace NS_Composants
 		String^ creer(String^, String^, String^);
 		//void modifier();
 		//void supprimer();
-		//void afficher();
+		String^ afficher(int a);
 
 
 

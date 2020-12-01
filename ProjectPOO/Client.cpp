@@ -33,12 +33,19 @@ namespace NS_Composants
 		this->date2 = a;
 	}
 
+	String^ Client::creer(String^ a,String^ b,String^ c,String^ d)
+	{
+		return "INSERT INTO Client(Nom_C,Prenom_C,Date_de_naissance,Date_du_premier_achat) values('" + nom + "','" + prenom + "','" + date + "','" + date2 + "')";
+	}
+
 	Client::Client()
 	{
 
 		this->ville = "";
 		this->add_facturation = "";
 		this->add_livraison = "";
+		this->date = "";
+		this->date2 = "";
 
 
 	}

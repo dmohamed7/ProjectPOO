@@ -13,6 +13,16 @@ namespace NS_Composants
 		return prenom;
 	}
 
+	int CPersonne::getID()
+	{
+		return this->ID;
+	}
+
+
+	void CPersonne::setID(int id)
+	{
+		this->ID = id;
+	}
 
 	void CPersonne::setNom(String^ n)
 	{
@@ -36,11 +46,18 @@ namespace NS_Composants
 	{
 		this->nom = "";
 		this->prenom = "";
+		this->date = "";
+		this->ID = 0;
 	}
 
 	 String^ CPersonne::creer(String^ a,String^ b ,String^ c)
 	{
 		return "INSERT INTO Personnel(Nom_P, Prenom_P, Date_D_embauche) values('" + nom+"','"+prenom+"','"+date+"');";
 	}
+
+	  String^ CPersonne::afficher(int a)
+	 {
+		return "SELECT * FROM Client where ID_Client=" + ID + "";
+	 }
 
 }
