@@ -74,7 +74,7 @@ namespace ProjectPOO {
 			// button1
 			// 
 			this->button1->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
-			this->button1->BackColor = System::Drawing::Color::GhostWhite;
+			this->button1->BackColor = System::Drawing::Color::Gold;
 			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->button1->ImageAlign = System::Drawing::ContentAlignment::TopRight;
 			this->button1->Location = System::Drawing::Point(12, 420);
