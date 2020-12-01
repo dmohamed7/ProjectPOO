@@ -236,7 +236,7 @@ namespace ProjectPOO {
 	}
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=ProjetPoo;Integrated Security=True");
-	Client^ cl = gcnew Client();
+	NS_Composants::Client^ cl = gcnew NS_Composants::Client();
 	
 	cl->setNom(textBox1->Text);
     cl->setPrenom(textBox2->Text);

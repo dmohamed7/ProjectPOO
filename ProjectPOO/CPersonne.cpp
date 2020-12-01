@@ -1,7 +1,8 @@
 #include "CPersonne.h"
 #include<iostream>
 #include<string>
-
+namespace NS_Composants
+{
 	String^ CPersonne::getNom()
 	{
 		return nom;
@@ -22,7 +23,14 @@
 	{
 		this->prenom = P;
 	}
-
+	void CPersonne::setDate(String^ a)
+	{
+		this->date = a;
+	}
+	String^ CPersonne::getDate()
+	{
+		return this->date;
+	}
 
 	CPersonne::CPersonne()
 	{
@@ -30,8 +38,9 @@
 		this->prenom = "";
 	}
 
-	String^ CPersonne::creer(String^ chemin)
+	 String^ CPersonne::creer(String^ a,String^ b ,String^ c)
 	{
-		return "INSERT INTO Personnel(Nom_P, Prenom_P, Date_D_embauche) values('" + chemin+"');";
+		return "INSERT INTO Personnel(Nom_P, Prenom_P, Date_D_embauche) values('" + nom+"','"+prenom+"','"+date+"');";
 	}
 
+}

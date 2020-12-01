@@ -1,7 +1,8 @@
 #include "Client.h"
 #include<iostream>
 #include<string>
-
+namespace NS_Composants
+{
 	using namespace System;
 
 
@@ -68,4 +69,4 @@
 	}
 
 
-
+}

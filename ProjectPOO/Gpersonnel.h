@@ -1,7 +1,6 @@
 #pragma once
 #include "CPersonnel.h"
 #include "CPersonne.h"
-
 using namespace System::Data::SqlClient;
 namespace ProjectPOO {
 
@@ -290,13 +289,14 @@ namespace ProjectPOO {
 private: System::Void Gpersonnel_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void Ajouter_Click(System::Object^ sender, System::EventArgs^ e) {
-	CPersonnel^ cP = gcnew CPersonnel;
+	NS_Composants::CPersonnel^ cP = gcnew NS_Composants::CPersonnel();
 	cP->setNom(textBox2->Text);
 	cP->setPrenom(textBox3->Text);
 	String^ date = Convert::ToDateTime(textBox5->Text).ToString("yyyy-MM-dd");
+	cP->setDate(date);
 	String^ constring = "Data Source=(local);Initial Catalog=ProjetPoo;Integrated Security=True";
 	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
-	SqlCommand^ cmdDataBase = gcnew SqlCommand("INSERT INTO Personnel (Nom_P ,Prenom_P,Date_D_embauche ) values ('" + cP->getNom() + "','" + cP->getPrenom() + "','"+date+"' ); ", conDataBase);
+	SqlCommand^ cmdDataBase = gcnew SqlCommand(cP->creer(cP->getNom(),cP->getPrenom(),cP->getDate()), conDataBase);
 	SqlDataReader^ myReader;
 	try {
 

@@ -3,7 +3,12 @@
 #include<iostream>
 #include<string>
 
+
+namespace NS_Composants
+{
+
 	using namespace System;
+
 	ref class CPersonnel :public CPersonne
 	{
 	private:
@@ -17,3 +22,4 @@
 
 
 	};
+}

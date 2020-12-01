@@ -1,6 +1,7 @@
 
 #include "CPersonnel.h"
-
+namespace NS_Composants
+{
 	void CPersonnel::setEncadreur(int a)
 	{
 		if (a == 0)
@@ -21,4 +22,4 @@
 		this->encadreur = "";
 		this->adresse = "";
 	}
-
+}
