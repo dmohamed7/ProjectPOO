@@ -17,11 +17,6 @@ namespace NS_Composants
 
 
 
-	void Client::setVille(String^ v)
-	{
-		this->ville = v;
-	}
-
 	void Client::setDate(String^ a)
 	{
 		this->date = a;
@@ -36,12 +31,12 @@ namespace NS_Composants
 
 	String^ Client::creer(String^ a,String^ b,String^ c,String^ d)
 	{
-		return "INSERT INTO Client(Nom_C,Prenom_C,Date_de_naissance,Date_du_premier_achat) values('" + nom + "','" + prenom + "','" + date + "','" + date2 + "')";
+		return "INSERT INTO Client(Nom_C,Prenom_C,Date_de_naissance,Date_du_premier_achat) values('" + a + "','" + b + "','" + c + "','" + d + "')";
 	}
 
 	String^ Client::modifier(String^ a, String^ b, String^ c, String^ d,int id)
 	{
-		return "UPDATE Client SET Nom_C = '" + nom + "', Prenom_C = '" + prenom + "', Date_de_naissance = '" + date + "', Date_du_premier_achat = '" + date2 + "' WHERE ID_Client = " + id + "";
+		return "UPDATE Client SET Nom_C = '" + a + "', Prenom_C = '" + b + "', Date_de_naissance = '" + c + "', Date_du_premier_achat = '" + d + "' WHERE ID_Client = " + id + "";
 	}
 
 	String^ Client::supprimer(int a)
@@ -52,7 +47,7 @@ namespace NS_Composants
 	Client::Client()
 	{
 
-		this->ville = "";
+		
 		this->add_facturation = "";
 		this->add_livraison = "";
 		this->date = "";
@@ -72,10 +67,7 @@ namespace NS_Composants
 		return this->add_facturation;
 	}
 
-	String^ Client::getVille()
-	{
-		return this->ville;
-	}
+
 
 	String^ Client::getDate()
 	{

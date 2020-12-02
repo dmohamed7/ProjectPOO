@@ -273,6 +273,7 @@ namespace ProjectPOO {
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(100, 22);
 			this->textBox6->TabIndex = 18;
+			this->textBox6->TextChanged += gcnew System::EventHandler(this, &Gclient::textBox6_TextChanged);
 			// 
 			// Gclient
 			// 
@@ -318,7 +319,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
 	NS_Composants::Client^ cl = gcnew NS_Composants::Client();
 	NS_Composants::ville^ vl = gcnew NS_Composants::ville();
-	vl->setville(textBox6->Text);
+	vl->setvile(textBox6->Text);
 	cl->setNom(textBox1->Text);
     cl->setPrenom(textBox2->Text);
 	String^ date = Convert::ToDateTime(textBox3->Text).ToString("yyyy-MM-dd");
@@ -326,11 +327,16 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	cl->setDate(date);
 	cl->setDate2(date2);
 	SqlCommand^ com = gcnew SqlCommand(cl->creer(cl->getNom(),cl->getPrenom(),cl->getDate(),cl->getDate2()), con);
-	SqlCommand^ co = gcnew SqlCommand(vl->ajouter(vl->getville()), con);
+	SqlCommand^ co = gcnew SqlCommand(vl->ajouter(vl->getvile()), con);
 	SqlDataReader^ rd;
+	SqlDataReader^ r;
 	try {
 		con->Open();
 		rd = com->ExecuteReader();
+		con->Close();
+		con->Open();
+		r = co->ExecuteReader();
+		con->Close();
 		MessageBox::Show("client enregistree");
 
 	}
@@ -435,6 +441,8 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void dataGridView2_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
+private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

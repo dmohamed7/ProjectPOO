@@ -54,6 +54,8 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::TextBox^ textBox6;
 	private: System::Windows::Forms::TextBox^ textBox7;
 	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::TextBox^ textBox8;
 
 	private:
 		/// <summary>
@@ -87,6 +89,8 @@ namespace ProjectPOO {
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -107,6 +111,7 @@ namespace ProjectPOO {
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"modifier";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &GArticle::button2_Click);
 			// 
 			// button3
 			// 
@@ -177,7 +182,7 @@ namespace ProjectPOO {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(23, 235);
+			this->label6->Location = System::Drawing::Point(23, 238);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(37, 17);
 			this->label6->TabIndex = 9;
@@ -242,6 +247,23 @@ namespace ProjectPOO {
 			this->label7->TabIndex = 17;
 			this->label7->Text = L"ID";
 			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Location = System::Drawing::Point(23, 278);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(50, 17);
+			this->label8->TabIndex = 18;
+			this->label8->Text = L"prix_ht";
+			// 
+			// textBox8
+			// 
+			this->textBox8->Location = System::Drawing::Point(118, 278);
+			this->textBox8->Name = L"textBox8";
+			this->textBox8->Size = System::Drawing::Size(100, 22);
+			this->textBox8->TabIndex = 19;
+			this->textBox8->TextChanged += gcnew System::EventHandler(this, &GArticle::textBox8_TextChanged);
+			// 
 			// GArticle
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -249,6 +271,8 @@ namespace ProjectPOO {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->ClientSize = System::Drawing::Size(907, 509);
+			this->Controls->Add(this->textBox8);
+			this->Controls->Add(this->label8);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->textBox7);
 			this->Controls->Add(this->textBox6);
@@ -283,6 +307,8 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
 	NS_Composants::CArticle^ ca = gcnew NS_Composants::CArticle();
 	ca->setNom_article(textBox2->Text);
+	int prix = int::Parse(textBox8->Text);
+	ca->setPrix_uht(prix);
 	int ref = int::Parse(textBox1->Text);
 	ca->setRef_article(ref);
 	ca->setCouleur(textBox3->Text);
@@ -292,13 +318,13 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	ca->setQuantité(quantité);
 	int seuil = int::Parse(textBox6->Text);
 	ca->setseuil(seuil);
-	SqlCommand^ com = gcnew SqlCommand(ca->ajouter(ca->getRef_article(),ca->getNom_article(),ca->getCouleur(),ca->getTVA(),ca->getQuantité(),ca->getseuil()), con);
+	SqlCommand^ com = gcnew SqlCommand(ca->ajouter(ca->getRef_article(),ca->getNom_article(),ca->getCouleur(),ca->getPrix_uht(),ca->getTVA(),ca->getQuantité(),ca->getseuil()), con);
 
 	SqlDataReader^ rd;
 	try {
 		con->Open();
 		rd = com->ExecuteReader();
-		MessageBox::Show("client enregistree");
+		MessageBox::Show("article enregistrer");
 
 	}
 	catch (Exception^ ex)
@@ -325,6 +351,39 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	}
 }
 private: System::Void textBox7_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	try {
+	SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
+	NS_Composants::CArticle^ ca = gcnew NS_Composants::CArticle();
+	ca->setNom_article(textBox2->Text);
+	int ref = int::Parse(textBox1->Text);
+	int id = int::Parse(textBox7->Text);
+	int prix = int::Parse(textBox8->Text);
+	ca->setPrix_uht(prix);
+	ca->setRef_article(ref);
+	ca->setCouleur(textBox3->Text);
+	int montant_tva = int::Parse(textBox4->Text);
+	ca->setTVA(montant_tva);
+	int quantité = int::Parse(textBox5->Text);
+	ca->setQuantité(quantité);
+	int seuil = int::Parse(textBox6->Text);
+	ca->setseuil(seuil);
+	SqlCommand^ com = gcnew SqlCommand(ca->modifier(ca->getRef_article(), ca->getNom_article(), ca->getCouleur(),ca->getPrix_uht() ,ca->getTVA(), ca->getQuantité(), ca->getseuil(),ca->getID()), con);
+
+	SqlDataReader^ rd;
+	
+		con->Open();
+		rd = com->ExecuteReader();
+		MessageBox::Show("article modifier");
+
+	}
+	catch (Exception^ ex)
+	{
+		MessageBox::Show(ex->Message);
+	}
+}
+private: System::Void textBox8_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

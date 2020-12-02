@@ -11,7 +11,6 @@ namespace NS_Composants
 	protected:
 		String^ add_livraison;
 		String^ add_facturation;
-		String^ ville;
 		String^ date;
 		String^ date2;
 		String^ nom_c;
@@ -19,7 +18,6 @@ namespace NS_Composants
 	public:
 		void setAdd_facturation(String^ adresse);
 		void setadd_livraison(String^ adresse);
-		void setVille(String^ v);
 		void setDate(String^ a);
 		void setDate2(String^ a);
 		String^ creer(String^, String^, String^, String^);
@@ -28,7 +26,6 @@ namespace NS_Composants
 		Client();
 		String^ getadd_livraison();
 		String^ getadd_facturation();
-		String^ getVille();
 		String^ getDate();
 		String^ getDate2();
 

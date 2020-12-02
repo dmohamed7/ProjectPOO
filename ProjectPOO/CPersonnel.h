@@ -7,18 +7,19 @@
 namespace NS_Composants
 {
 
-	using namespace System;
 
 	ref class CPersonnel :public CPersonne
 	{
 	private:
-		String^ encadreur;
+		int encadreur;
 		String^ adresse;
 	public:
 		void setEncadreur(int a);
-		String^ getEncadreur();
+		int getEncadreur();
+		void setAdresse(String^);
+		String^ getAdresse();
 		CPersonnel();
-
+		String^ creer(String^, String^, String^,String^,int);
 
 
 	};

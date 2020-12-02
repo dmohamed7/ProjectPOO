@@ -7,12 +7,12 @@ namespace NS_Composants
 	ref class CArticle
 	{
 	protected:
-		int id;
+		int ID;
 		int Ref_article;
 		String^ nom_article;
 		int quantité;
-		double prix_uht;
-		double prix_TTC;
+		float prix_uht;
+		float prix_TTC;
 		int TVA;
 		String^ couleur;
 		int seuil;
@@ -21,8 +21,8 @@ namespace NS_Composants
 		void setRef_article(int REF);
 		void setNom_article(String^ N);
 		void setQuantité(int q);
-		void setPrix_uht(double Prix);
-		void setPrix_TTC(double prix);
+		void setPrix_uht(float Prix);
+		void setPrix_TTC(float prix);
 		void setTVA(int tva);
 		void setCouleur(String^ c);
 		void setseuil(int a);
@@ -32,12 +32,12 @@ namespace NS_Composants
 		int getRef_article();
 		String^ getNom_article();
 		int getQuantité();
-		double getPrix_uht();
-		double getPrix_TTC();
+		float getPrix_uht();
+		float getPrix_TTC();
 		int getTVA();
 		CArticle();
-		String^ ajouter(int a, String^ b, String^ c, int d, int e, int f);
-		//void modifier();
+		String^ ajouter(int a, String^ b, String^ c, float g, int d, int e, int f);
+		String^ modifier(int a, String^ b, String^ c,float g, int d, int e, int f, int id);
 		String^ supprimer(int d);
 	};
 }

@@ -52,12 +52,12 @@ namespace NS_Composants
 
 	 String^ CPersonne::creer(String^ a,String^ b ,String^ c)
 	{
-		return "INSERT INTO Personnel(Nom_P, Prenom_P, Date_D_embauche) values('" + nom+"','"+prenom+"','"+date+"');";
+		return "INSERT INTO Personnel(Nom_P, Prenom_P, Date_D_embauche) values('" + a +"','"+b+"','"+c+"');";
 	}
 
 	  String^ CPersonne::afficher(int a)
 	 {
-		return "SELECT * FROM Client where ID_Client=" + ID + "";
+		return "SELECT * FROM Client where ID_Client=" + a + "";
 	 }
 
 }

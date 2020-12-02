@@ -8,10 +8,10 @@ private:
 	String^ vile;
 	int ID;
 public:
-	void setville(String^ a);
+	void setvile(String^ a);
 	void setID(int id);
 	int getID();
-	String^ getville();
+	String^ getvile();
 	ville();
 	String^ ajouter(String^ a);
 	//String^ modifier();

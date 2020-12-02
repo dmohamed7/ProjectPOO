@@ -3,7 +3,7 @@ namespace NS_Composants
 {
     void CArticle::setID(int id)
     {
-        this->id = id;
+        this->ID = id;
     }
     void CArticle::setRef_article(int REF)
     {
@@ -20,12 +20,12 @@ namespace NS_Composants
         this->quantité = q;
     }
 
-    void CArticle::setPrix_uht(double Prix)
+    void CArticle::setPrix_uht(float Prix)
     {
         this->prix_uht = Prix;
     }
 
-    void CArticle::setPrix_TTC(double prix)
+    void CArticle::setPrix_TTC(float prix)
     {
         this->prix_TTC = prix;
     }
@@ -47,7 +47,7 @@ namespace NS_Composants
 
     int CArticle::getID()
     {
-        return this->id;
+        return this->ID;
     }
 
     int CArticle::getseuil()
@@ -75,12 +75,12 @@ namespace NS_Composants
         return this->quantité;
     }
 
-    double CArticle::getPrix_uht()
+    float CArticle::getPrix_uht()
     {
         return this->prix_uht;
     }
 
-    double CArticle::getPrix_TTC()
+    float CArticle::getPrix_TTC()
     {
         return this->prix_TTC;
     }
@@ -101,12 +101,16 @@ namespace NS_Composants
         this->couleur = "";
         this->seuil = 0;
     }
-    String^ CArticle::ajouter(int a,String^ b,String^ c,int d,int e, int f)
+    String^ CArticle::ajouter(int a,String^ b,String^ c,float g,int d,int e, int f)
     {
-        return "INSERT INTO Article(Reference_Article,Designation,Couleur,Taux_TVA,Quantite_en_Stock,Seuil_de_reapprovisionnement) values('" + Ref_article + "','" + nom_article + "','" + couleur + "','"+ TVA +"','"+ quantité +"','"+seuil+"');";
+        return "INSERT INTO Article(Reference_Article,Designation,Couleur,Prix_HT ,Taux_TVA,Quantite_en_Stock,Seuil_de_reapprovisionnement) values('" + a + "','" + b + "','" + c + "','" + g +"','"+ d +"','"+ e +"','"+ f +"');";
+    }
+    String^ CArticle::modifier(int a,String^ b,String^ c,float g ,int d ,int e,int f,int id)
+    {
+        return "UPDATE Article SET Reference_Article = '" + a + "', Designation = '" + b + "', Couleur = '" + c + "',Prix_HT = '" + g +"' ,Taux_TVA = '" + d + "',Quantite_en_Stock ='" + e +"',Seuil_de_reapprovisionnement ='" + f +"' WHERE ID_Article = " + id + "";
     }
     String^ CArticle::supprimer(int d)
     {
-        return "delete from Article WHERE ID_Article=" + id + "";
+        return "delete from Article WHERE ID_Article=" + d + "";
     }
 }

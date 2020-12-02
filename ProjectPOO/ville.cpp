@@ -1,7 +1,7 @@
 #include "ville.h"
 namespace NS_Composants
 {
-	void ville::setville(String^ a)
+	void ville::setvile(String^ a)
 	{
 		this->vile = a;
 	}
@@ -13,10 +13,10 @@ namespace NS_Composants
 
 	int ville::getID()
 	{
-		return this->ID;
+		return this ->ID;
 	}
 
-	String^ ville::getville()
+	String^ ville::getvile()
 	{
 		return this->vile;
 	}
