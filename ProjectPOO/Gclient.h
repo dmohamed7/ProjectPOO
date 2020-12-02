@@ -100,6 +100,7 @@ namespace ProjectPOO {
 			// 
 			// button1
 			// 
+			this->button1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
 			this->button1->FlatAppearance->BorderSize = 0;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
@@ -114,6 +115,7 @@ namespace ProjectPOO {
 			// 
 			// button2
 			// 
+			this->button2->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->button2->FlatAppearance->BorderSize = 0;
 			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.Image")));
@@ -128,6 +130,7 @@ namespace ProjectPOO {
 			// 
 			// button3
 			// 
+			this->button3->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->button3->FlatAppearance->BorderSize = 0;
 			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.Image")));
@@ -141,6 +144,7 @@ namespace ProjectPOO {
 			// 
 			// button4
 			// 
+			this->button4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->button4->FlatAppearance->BorderSize = 0;
 			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button4.Image")));
@@ -155,45 +159,47 @@ namespace ProjectPOO {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
-				static_cast<System::Int32>(static_cast<System::Byte>(224)));
+			this->label1->BackColor = System::Drawing::Color::Transparent;
 			this->label1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label1->Location = System::Drawing::Point(12, 69);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(54, 17);
+			this->label1->Size = System::Drawing::Size(106, 17);
 			this->label1->TabIndex = 4;
-			this->label1->Text = L"Nom_C";
+			this->label1->Text = L"Nom du client  :";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::Transparent;
 			this->label2->Location = System::Drawing::Point(12, 104);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(74, 17);
+			this->label2->Size = System::Drawing::Size(125, 17);
 			this->label2->TabIndex = 5;
-			this->label2->Text = L"Prenom_C";
+			this->label2->Text = L"prénom du client : ";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(0, 193);
+			this->label3->BackColor = System::Drawing::Color::Transparent;
+			this->label3->Location = System::Drawing::Point(12, 177);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(137, 17);
+			this->label3->Size = System::Drawing::Size(145, 17);
 			this->label3->TabIndex = 6;
-			this->label3->Text = L"Date_premier_achat";
+			this->label3->Text = L"Date_premier_achat :";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(0, 143);
+			this->label4->BackColor = System::Drawing::Color::Transparent;
+			this->label4->Location = System::Drawing::Point(12, 143);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(124, 17);
+			this->label4->Size = System::Drawing::Size(134, 17);
 			this->label4->TabIndex = 7;
-			this->label4->Text = L"date de naissance";
+			this->label4->Text = L"Date de naissance :";
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(91, 66);
+			this->textBox1->Location = System::Drawing::Point(124, 66);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(100, 22);
 			this->textBox1->TabIndex = 8;
@@ -201,7 +207,7 @@ namespace ProjectPOO {
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(111, 104);
+			this->textBox2->Location = System::Drawing::Point(143, 101);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(100, 22);
 			this->textBox2->TabIndex = 9;
@@ -216,9 +222,9 @@ namespace ProjectPOO {
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(158, 190);
+			this->textBox4->Location = System::Drawing::Point(163, 177);
 			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(100, 22);
+			this->textBox4->Size = System::Drawing::Size(108, 22);
 			this->textBox4->TabIndex = 11;
 			// 
 			// textBox5
@@ -233,7 +239,7 @@ namespace ProjectPOO {
 			// 
 			this->label5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->label5->AutoSize = true;
-			this->label5->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->label5->BackColor = System::Drawing::Color::Transparent;
 			this->label5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label5->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->label5->Location = System::Drawing::Point(753, 49);
