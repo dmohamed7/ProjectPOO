@@ -157,42 +157,71 @@ namespace ProjectPOO {
 			// 
 			// Ajouter
 			// 
-			this->Ajouter->Location = System::Drawing::Point(42, 375);
+			this->Ajouter->Anchor = System::Windows::Forms::AnchorStyles::Right;
+			this->Ajouter->BackColor = System::Drawing::Color::Transparent;
+			this->Ajouter->FlatAppearance->BorderSize = 0;
+			this->Ajouter->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Ajouter->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Ajouter.Image")));
+			this->Ajouter->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->Ajouter->Location = System::Drawing::Point(818, 49);
 			this->Ajouter->Name = L"Ajouter";
-			this->Ajouter->Size = System::Drawing::Size(112, 52);
+			this->Ajouter->Size = System::Drawing::Size(109, 52);
 			this->Ajouter->TabIndex = 6;
 			this->Ajouter->Text = L"Ajouter";
-			this->Ajouter->UseVisualStyleBackColor = true;
+			this->Ajouter->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->Ajouter->UseVisualStyleBackColor = false;
 			this->Ajouter->Click += gcnew System::EventHandler(this, &Gpersonnel::Ajouter_Click);
 			// 
 			// Modifier
 			// 
-			this->Modifier->Location = System::Drawing::Point(234, 375);
+			this->Modifier->Anchor = System::Windows::Forms::AnchorStyles::Right;
+			this->Modifier->BackColor = System::Drawing::Color::Transparent;
+			this->Modifier->FlatAppearance->BorderSize = 0;
+			this->Modifier->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Modifier->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Modifier.Image")));
+			this->Modifier->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->Modifier->Location = System::Drawing::Point(818, 126);
 			this->Modifier->Name = L"Modifier";
 			this->Modifier->Size = System::Drawing::Size(112, 52);
 			this->Modifier->TabIndex = 7;
 			this->Modifier->Text = L"Modifier";
-			this->Modifier->UseVisualStyleBackColor = true;
+			this->Modifier->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->Modifier->UseVisualStyleBackColor = false;
 			this->Modifier->Click += gcnew System::EventHandler(this, &Gpersonnel::Modifier_Click);
 			// 
 			// Supprimer
 			// 
-			this->Supprimer->Location = System::Drawing::Point(440, 375);
+			this->Supprimer->Anchor = System::Windows::Forms::AnchorStyles::Right;
+			this->Supprimer->BackColor = System::Drawing::Color::Transparent;
+			this->Supprimer->Cursor = System::Windows::Forms::Cursors::Default;
+			this->Supprimer->FlatAppearance->BorderSize = 0;
+			this->Supprimer->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Supprimer->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Supprimer.Image")));
+			this->Supprimer->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->Supprimer->Location = System::Drawing::Point(818, 224);
 			this->Supprimer->Name = L"Supprimer";
 			this->Supprimer->Size = System::Drawing::Size(112, 52);
 			this->Supprimer->TabIndex = 8;
 			this->Supprimer->Text = L"Supprimer";
-			this->Supprimer->UseVisualStyleBackColor = true;
+			this->Supprimer->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->Supprimer->UseVisualStyleBackColor = false;
 			this->Supprimer->Click += gcnew System::EventHandler(this, &Gpersonnel::Supprimer_Click);
 			// 
 			// Afficher
 			// 
-			this->Afficher->Location = System::Drawing::Point(659, 375);
+			this->Afficher->Anchor = System::Windows::Forms::AnchorStyles::Right;
+			this->Afficher->BackColor = System::Drawing::Color::Transparent;
+			this->Afficher->FlatAppearance->BorderSize = 0;
+			this->Afficher->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Afficher->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Afficher.Image")));
+			this->Afficher->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->Afficher->Location = System::Drawing::Point(818, 310);
 			this->Afficher->Name = L"Afficher";
 			this->Afficher->Size = System::Drawing::Size(112, 52);
 			this->Afficher->TabIndex = 9;
 			this->Afficher->Text = L"Afficher";
-			this->Afficher->UseVisualStyleBackColor = true;
+			this->Afficher->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->Afficher->UseVisualStyleBackColor = false;
 			this->Afficher->Click += gcnew System::EventHandler(this, &Gpersonnel::Afficher_Click);
 			// 
 			// label3
@@ -216,12 +245,15 @@ namespace ProjectPOO {
 			// 
 			// dataGridView1
 			// 
+			this->dataGridView1->BackgroundColor = System::Drawing::Color::White;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(653, 104);
+			this->dataGridView1->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->dataGridView1->GridColor = System::Drawing::SystemColors::ControlLightLight;
+			this->dataGridView1->Location = System::Drawing::Point(0, 441);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(291, 229);
+			this->dataGridView1->Size = System::Drawing::Size(956, 108);
 			this->dataGridView1->TabIndex = 12;
 			// 
 			// label4
@@ -262,7 +294,7 @@ namespace ProjectPOO {
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(956, 549);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->textBox5);
