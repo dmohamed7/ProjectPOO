@@ -14,6 +14,8 @@ namespace NS_Composants
 		String^ ville;
 		String^ date;
 		String^ date2;
+		String^ nom_c;
+		
 	public:
 		void setAdd_facturation(String^ adresse);
 		void setadd_livraison(String^ adresse);
@@ -21,7 +23,8 @@ namespace NS_Composants
 		void setDate(String^ a);
 		void setDate2(String^ a);
 		String^ creer(String^, String^, String^, String^);
-
+		String^ modifier(String^, String^, String^, String^,int id);
+		String^ supprimer(int a);
 		Client();
 		String^ getadd_livraison();
 		String^ getadd_facturation();
@@ -32,45 +35,4 @@ namespace NS_Composants
 
 
 	};
-
-	value struct Date
-	{
-	private:
-		int^ jour;
-		int^ mois;
-		int^ année;
-		Date* date_naissance;
-		Date* date_premier_achat;
-	public:
-
-		void Date::setDATE_Naissance(int j, int m, int a)
-		{
-			this->date_naissance->jour = j;
-			this->date_naissance->mois = m;
-			this->date_naissance->année = a;
-		}
-		void Date::setDate_premier_achat(int j, int m, int a)
-		{
-			this->date_premier_achat->jour = j;
-			this->date_premier_achat->mois = m;
-			this->date_premier_achat->année = a;
-		}
-		int^ Date::getDate_premier_achat()
-		{
-			return this->date_premier_achat->jour;
-			return this->date_premier_achat->mois;
-			return this->date_premier_achat->année;
-		}
-		int^ Date::getDate_naissance()
-		{
-			return this->date_naissance->jour;
-			return this->date_naissance->mois;
-			return this->date_naissance->année;
-		}
-
-
-
-
-	};
-
 }

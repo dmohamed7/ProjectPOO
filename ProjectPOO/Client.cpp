@@ -3,7 +3,6 @@
 #include<string>
 namespace NS_Composants
 {
-	using namespace System;
 
 
 	void Client::setAdd_facturation(String^ adresse)
@@ -33,9 +32,21 @@ namespace NS_Composants
 		this->date2 = a;
 	}
 
+
+
 	String^ Client::creer(String^ a,String^ b,String^ c,String^ d)
 	{
 		return "INSERT INTO Client(Nom_C,Prenom_C,Date_de_naissance,Date_du_premier_achat) values('" + nom + "','" + prenom + "','" + date + "','" + date2 + "')";
+	}
+
+	String^ Client::modifier(String^ a, String^ b, String^ c, String^ d,int id)
+	{
+		return "UPDATE Client SET Nom_C = '" + nom + "', Prenom_C = '" + prenom + "', Date_de_naissance = '" + date + "', Date_du_premier_achat = '" + date2 + "' WHERE ID_Client = " + id + "";
+	}
+
+	String^ Client::supprimer(int a)
+	{
+		return "delete from Client WHERE ID_Client=" + ID + "";
 	}
 
 	Client::Client()
@@ -46,6 +57,7 @@ namespace NS_Composants
 		this->add_livraison = "";
 		this->date = "";
 		this->date2 = "";
+		
 
 
 	}

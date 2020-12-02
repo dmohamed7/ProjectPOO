@@ -131,6 +131,7 @@
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="CPersonne.cpp" />
     <ClCompile Include="CPersonnel.cpp" />
+    <ClCompile Include="ville.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CArticle.h" />
@@ -156,6 +157,7 @@
     </ClInclude>
     <ClInclude Include="CPersonne.h" />
     <ClInclude Include="CPersonnel.h" />
+    <ClInclude Include="ville.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="GArticle.resx">

@@ -1,6 +1,7 @@
 #pragma once
 #include"CPersonne.h"
 #include"Client.h"
+#include"ville.h"
 using namespace System::Data::SqlClient;
 namespace ProjectPOO {
 
@@ -56,6 +57,8 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::BindingSource^ bindingSource1;
 	private: System::Windows::Forms::BindingSource^ bindingSource2;
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::TextBox^ textBox6;
 	private: System::ComponentModel::IContainer^ components;
 
 	private:
@@ -92,6 +95,8 @@ namespace ProjectPOO {
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
 			this->bindingSource2 = (gcnew System::Windows::Forms::BindingSource(this->components));
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
@@ -124,8 +129,9 @@ namespace ProjectPOO {
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(117, 57);
 			this->button3->TabIndex = 2;
-			this->button3->Text = L"button3";
+			this->button3->Text = L"modifier";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &Gclient::button3_Click);
 			// 
 			// button4
 			// 
@@ -133,8 +139,9 @@ namespace ProjectPOO {
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(117, 57);
 			this->button4->TabIndex = 3;
-			this->button4->Text = L"button4";
+			this->button4->Text = L"supprimer";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &Gclient::button4_Click);
 			// 
 			// label1
 			// 
@@ -238,6 +245,7 @@ namespace ProjectPOO {
 			this->dataGridView2->RowTemplate->Height = 24;
 			this->dataGridView2->Size = System::Drawing::Size(256, 206);
 			this->dataGridView2->TabIndex = 15;
+			this->dataGridView2->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Gclient::dataGridView2_CellContentClick);
 			// 
 			// button5
 			// 
@@ -249,6 +257,23 @@ namespace ProjectPOO {
 			this->button5->UseVisualStyleBackColor = true;
 			this->button5->Click += gcnew System::EventHandler(this, &Gclient::button5_Click);
 			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Location = System::Drawing::Point(54, 234);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(32, 17);
+			this->label6->TabIndex = 17;
+			this->label6->Text = L"ville";
+			this->label6->Click += gcnew System::EventHandler(this, &Gclient::label6_Click);
+			// 
+			// textBox6
+			// 
+			this->textBox6->Location = System::Drawing::Point(158, 234);
+			this->textBox6->Name = L"textBox6";
+			this->textBox6->Size = System::Drawing::Size(100, 22);
+			this->textBox6->TabIndex = 18;
+			// 
 			// Gclient
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -256,6 +281,8 @@ namespace ProjectPOO {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->ClientSize = System::Drawing::Size(904, 509);
+			this->Controls->Add(this->textBox6);
+			this->Controls->Add(this->label6);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->dataGridView1);
@@ -288,9 +315,10 @@ namespace ProjectPOO {
 	private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=ProjetPoo;Integrated Security=True");
+	SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
 	NS_Composants::Client^ cl = gcnew NS_Composants::Client();
-	
+	NS_Composants::ville^ vl = gcnew NS_Composants::ville();
+	vl->setville(textBox6->Text);
 	cl->setNom(textBox1->Text);
     cl->setPrenom(textBox2->Text);
 	String^ date = Convert::ToDateTime(textBox3->Text).ToString("yyyy-MM-dd");
@@ -298,7 +326,8 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	cl->setDate(date);
 	cl->setDate2(date2);
 	SqlCommand^ com = gcnew SqlCommand(cl->creer(cl->getNom(),cl->getPrenom(),cl->getDate(),cl->getDate2()), con);
-		SqlDataReader^ rd;
+	SqlCommand^ co = gcnew SqlCommand(vl->ajouter(vl->getville()), con);
+	SqlDataReader^ rd;
 	try {
 		con->Open();
 		rd = com->ExecuteReader();
@@ -316,7 +345,7 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	try {
 		NS_Composants::Client^ cl = gcnew NS_Composants::Client();
-		SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=ProjetPoo;Integrated Security=True");
+		SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
 		int id = Int32::Parse(textBox5->Text);
 		cl->setID(id);
 		SqlCommand^ comm = gcnew SqlCommand(cl->afficher(cl->getID()), con);
@@ -352,7 +381,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void textBox5_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-	SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=ProjetPoo;Integrated Security=True");
+	SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
 	SqlDataAdapter^ sda = gcnew SqlDataAdapter("SELECT * FROM Client", con);
 	DataTable^ dt = gcnew DataTable();
 	dataGridView2->Hide();
@@ -360,6 +389,52 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 	sda->Fill(dt);
 	bindingSource1->DataSource = dt;
 	dataGridView1->DataSource = bindingSource1;
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	try {
+		SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
+		NS_Composants::Client^ cl = gcnew NS_Composants::Client();
+		int id = Int32::Parse(textBox5->Text);
+		cl->setNom(textBox1->Text);
+		cl->setPrenom(textBox2->Text);
+		cl->setID(id);
+		String^ date = Convert::ToDateTime(textBox3->Text).ToString("yyyy-MM-dd");
+		String^ date2 = Convert::ToDateTime(textBox4->Text).ToString("yyyy-MM-dd");
+		cl->setDate(date);
+		cl->setDate2(date2);
+		SqlCommand^ cmd = gcnew SqlCommand(cl->modifier(cl->getNom(), cl->getPrenom(), cl->getDate(), cl->getDate2(), cl->getID()), con);
+		con->Open();
+		SqlDataReader^ dr = cmd->ExecuteReader();
+		MessageBox::Show("Modification Reussi");
+		con->Close();
+	}
+	catch (Exception^ ex) {
+		
+	
+		MessageBox::Show(ex->Message);
+	}
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	try {
+			SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
+		NS_Composants::Client^ cl = gcnew NS_Composants::Client();
+		int ID = Int32::Parse(textBox5->Text);
+		cl->setID(ID);
+		SqlCommand^ cmd = gcnew SqlCommand(cl->supprimer(cl->getID()), con);
+		con->Open();
+		SqlDataReader^ dr = cmd->ExecuteReader();
+		MessageBox::Show("Client supprimée avec succée");
+		con->Close();
+	}
+	catch (Exception^ ex) {
+
+
+		MessageBox::Show(ex->Message);
+	}
+}
+private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void dataGridView2_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
 };
 }
