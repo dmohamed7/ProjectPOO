@@ -77,7 +77,7 @@ namespace ProjectPOO {
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
 			this->button1->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->button1->Location = System::Drawing::Point(273, 245);
+			this->button1->Location = System::Drawing::Point(332, 425);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(61, 73);
 			this->button1->TabIndex = 1;
@@ -92,7 +92,7 @@ namespace ProjectPOO {
 			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.Image")));
 			this->button2->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->button2->Location = System::Drawing::Point(360, 370);
+			this->button2->Location = System::Drawing::Point(399, 423);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(67, 74);
 			this->button2->TabIndex = 2;
@@ -107,7 +107,7 @@ namespace ProjectPOO {
 			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.Image")));
 			this->button3->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->button3->Location = System::Drawing::Point(488, 370);
+			this->button3->Location = System::Drawing::Point(472, 424);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(82, 74);
 			this->button3->TabIndex = 3;
@@ -122,7 +122,7 @@ namespace ProjectPOO {
 			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button4.Image")));
 			this->button4->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->button4->Location = System::Drawing::Point(577, 245);
+			this->button4->Location = System::Drawing::Point(560, 423);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(69, 73);
 			this->button4->TabIndex = 4;
@@ -136,7 +136,7 @@ namespace ProjectPOO {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(907, 509);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
