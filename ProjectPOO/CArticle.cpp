@@ -5,7 +5,7 @@ namespace NS_Composants
     {
         this->ID = id;
     }
-    void CArticle::setRef_article(int REF)
+    void CArticle::setRef_article(String^ REF)
     {
         this->Ref_article = REF;
     }
@@ -20,7 +20,7 @@ namespace NS_Composants
         this->quantité = q;
     }
 
-    void CArticle::setPrix_uht(float Prix)
+    void CArticle::setPrix_uht(double Prix)
     {
         this->prix_uht = Prix;
     }
@@ -60,7 +60,7 @@ namespace NS_Composants
         return this->couleur;
     }
 
-    int CArticle::getRef_article()
+    String^ CArticle::getRef_article()
     {
         return this->Ref_article;
     }
@@ -75,7 +75,7 @@ namespace NS_Composants
         return this->quantité;
     }
 
-    float CArticle::getPrix_uht()
+    double CArticle::getPrix_uht()
     {
         return this->prix_uht;
     }
@@ -92,7 +92,7 @@ namespace NS_Composants
 
     CArticle::CArticle()
     {
-        this->Ref_article = 0;
+        this->Ref_article = "";
         this->nom_article = "";
         this->quantité = 0;
         this->prix_uht = 0.0;
@@ -101,16 +101,20 @@ namespace NS_Composants
         this->couleur = "";
         this->seuil = 0;
     }
-    String^ CArticle::ajouter(int a,String^ b,String^ c,float g,int d,int e, int f)
+    String^ CArticle::ajouter(String^ a,String^ b,String^ c,double g,int d,int e, int f)
     {
         return "INSERT INTO Article(Reference_Article,Designation,Couleur,Prix_HT ,Taux_TVA,Quantite_en_Stock,Seuil_de_reapprovisionnement) values('" + a + "','" + b + "','" + c + "','" + g +"','"+ d +"','"+ e +"','"+ f +"');";
     }
-    String^ CArticle::modifier(int a,String^ b,String^ c,float g ,int d ,int e,int f,int id)
+    String^ CArticle::modifier(String^ a,String^ b,String^ c,double g ,int d ,int e,int f,int id)
     {
         return "UPDATE Article SET Reference_Article = '" + a + "', Designation = '" + b + "', Couleur = '" + c + "',Prix_HT = '" + g +"' ,Taux_TVA = '" + d + "',Quantite_en_Stock ='" + e +"',Seuil_de_reapprovisionnement ='" + f +"' WHERE ID_Article = " + id + "";
     }
     String^ CArticle::supprimer(int d)
     {
         return "delete from Article WHERE ID_Article=" + d + "";
+    }
+    String^ CArticle::afficher(int a)
+    {
+        return "SELECT * FROM Article where ID_Article=" + a + "";
     }
 }

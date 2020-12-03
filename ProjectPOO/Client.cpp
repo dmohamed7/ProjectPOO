@@ -34,14 +34,29 @@ namespace NS_Composants
 		return "INSERT INTO Client(Nom_C,Prenom_C,Date_de_naissance,Date_du_premier_achat) values('" + a + "','" + b + "','" + c + "','" + d + "')";
 	}
 
+	String^ Client::creer(String^ a,int b)
+	{
+		return "INSERT INTO Adresse (Adresse,ID_VILLE) values ('" + a + "','" + b+"')";
+	}
+
 	String^ Client::modifier(String^ a, String^ b, String^ c, String^ d,int id)
 	{
 		return "UPDATE Client SET Nom_C = '" + a + "', Prenom_C = '" + b + "', Date_de_naissance = '" + c + "', Date_du_premier_achat = '" + d + "' WHERE ID_Client = " + id + "";
 	}
 
+	String^ Client::modifier(String^ a, int b)
+	{
+		return "UPDATE Adresse SET Adresse = '" + a + "' WHERE ID_VILLE = " + b + "";
+	}
+
 	String^ Client::supprimer(int a)
 	{
-		return "delete from Client WHERE ID_Client=" + ID + "";
+		return "delete from Client WHERE ID_Client=" + a + "";
+	}
+
+	String^ Client::supprimer1(int a)
+	{
+		return "delete from Adresse WHERE ID_VILLE=" + a + "";
 	}
 
 	Client::Client()
@@ -77,6 +92,16 @@ namespace NS_Composants
 	String^ Client::getDate2()
 	{
 		return this->date2;
+	}
+
+	void Client::setvile(int a)
+	{
+		this->Ville = a;
+	}
+
+	int Client::getvile()
+	{
+		return this->Ville;
 	}
 
 

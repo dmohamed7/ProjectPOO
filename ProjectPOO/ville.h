@@ -14,8 +14,9 @@ public:
 	String^ getvile();
 	ville();
 	String^ ajouter(String^ a);
-	//String^ modifier();
+	String^ modifier(String^ a,int b);
 	//String^ afficher();
+	String^ supprimer(int^ a);
 
 };
 }

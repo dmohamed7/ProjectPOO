@@ -151,7 +151,6 @@ namespace ProjectPOO {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		Gpersonnel^ gper = gcnew Gpersonnel;
 		gper->Show();
-
 	}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}

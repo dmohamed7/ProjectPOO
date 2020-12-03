@@ -56,12 +56,18 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::TextBox^ textBox8;
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::DataGridView^ dataGridView2;
+	private: System::Windows::Forms::BindingSource^ bindingSource1;
+	private: System::Windows::Forms::BindingSource^ bindingSource2;
+	private: System::Windows::Forms::Button^ button5;
+	private: System::ComponentModel::IContainer^ components;
 
 	private:
 		/// <summary>
 		/// Variable nécessaire au concepteur.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -70,6 +76,7 @@ namespace ProjectPOO {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(GArticle::typeid));
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
@@ -91,6 +98,15 @@ namespace ProjectPOO {
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
+			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
+			this->bindingSource2 = (gcnew System::Windows::Forms::BindingSource(this->components));
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -131,6 +147,7 @@ namespace ProjectPOO {
 			this->button4->TabIndex = 3;
 			this->button4->Text = L"afficher";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &GArticle::button4_Click);
 			// 
 			// label1
 			// 
@@ -194,6 +211,7 @@ namespace ProjectPOO {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(100, 22);
 			this->textBox1->TabIndex = 10;
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &GArticle::textBox1_TextChanged);
 			// 
 			// textBox2
 			// 
@@ -232,7 +250,7 @@ namespace ProjectPOO {
 			// 
 			// textBox7
 			// 
-			this->textBox7->Location = System::Drawing::Point(699, 51);
+			this->textBox7->Location = System::Drawing::Point(723, 9);
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(100, 22);
 			this->textBox7->TabIndex = 16;
@@ -241,7 +259,7 @@ namespace ProjectPOO {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(696, 31);
+			this->label7->Location = System::Drawing::Point(696, 9);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(21, 17);
 			this->label7->TabIndex = 17;
@@ -264,6 +282,36 @@ namespace ProjectPOO {
 			this->textBox8->TabIndex = 19;
 			this->textBox8->TextChanged += gcnew System::EventHandler(this, &GArticle::textBox8_TextChanged);
 			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Location = System::Drawing::Point(611, 107);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->RowHeadersWidth = 51;
+			this->dataGridView1->RowTemplate->Height = 24;
+			this->dataGridView1->Size = System::Drawing::Size(294, 203);
+			this->dataGridView1->TabIndex = 20;
+			// 
+			// dataGridView2
+			// 
+			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView2->Location = System::Drawing::Point(611, 107);
+			this->dataGridView2->Name = L"dataGridView2";
+			this->dataGridView2->RowHeadersWidth = 51;
+			this->dataGridView2->RowTemplate->Height = 24;
+			this->dataGridView2->Size = System::Drawing::Size(294, 203);
+			this->dataGridView2->TabIndex = 21;
+			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(723, 61);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(117, 40);
+			this->button5->TabIndex = 22;
+			this->button5->Text = L"afficher_tout";
+			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &GArticle::button5_Click);
+			// 
 			// GArticle
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -271,6 +319,9 @@ namespace ProjectPOO {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->ClientSize = System::Drawing::Size(907, 509);
+			this->Controls->Add(this->button5);
+			this->Controls->Add(this->dataGridView2);
+			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->textBox8);
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->label7);
@@ -294,6 +345,10 @@ namespace ProjectPOO {
 			this->DoubleBuffered = true;
 			this->Name = L"GArticle";
 			this->Text = L"GArticle";
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource2))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -307,10 +362,9 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
 	NS_Composants::CArticle^ ca = gcnew NS_Composants::CArticle();
 	ca->setNom_article(textBox2->Text);
-	int prix = int::Parse(textBox8->Text);
+	double prix = double::Parse(textBox8->Text);
 	ca->setPrix_uht(prix);
-	int ref = int::Parse(textBox1->Text);
-	ca->setRef_article(ref);
+	ca->setRef_article(textBox1->Text);
 	ca->setCouleur(textBox3->Text);
 	int montant_tva = int::Parse(textBox4->Text);
 	ca->setTVA(montant_tva);
@@ -355,21 +409,20 @@ private: System::Void textBox7_TextChanged(System::Object^ sender, System::Event
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	try {
 	SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
-	NS_Composants::CArticle^ ca = gcnew NS_Composants::CArticle();
-	ca->setNom_article(textBox2->Text);
-	int ref = int::Parse(textBox1->Text);
+	NS_Composants::CArticle^ ar = gcnew NS_Composants::CArticle();
+	ar->setNom_article(textBox2->Text);
 	int id = int::Parse(textBox7->Text);
-	int prix = int::Parse(textBox8->Text);
-	ca->setPrix_uht(prix);
-	ca->setRef_article(ref);
-	ca->setCouleur(textBox3->Text);
+	double prix = double::Parse(textBox8->Text);
+	ar->setPrix_uht(prix);
+	ar->setRef_article(textBox1->Text);
+	ar->setCouleur(textBox3->Text);
 	int montant_tva = int::Parse(textBox4->Text);
-	ca->setTVA(montant_tva);
+	ar->setTVA(montant_tva);
 	int quantité = int::Parse(textBox5->Text);
-	ca->setQuantité(quantité);
+	ar->setQuantité(quantité);
 	int seuil = int::Parse(textBox6->Text);
-	ca->setseuil(seuil);
-	SqlCommand^ com = gcnew SqlCommand(ca->modifier(ca->getRef_article(), ca->getNom_article(), ca->getCouleur(),ca->getPrix_uht() ,ca->getTVA(), ca->getQuantité(), ca->getseuil(),ca->getID()), con);
+	ar->setseuil(seuil);
+	SqlCommand^ com = gcnew SqlCommand(ar->modifier(ar->getRef_article(), ar->getNom_article(), ar->getCouleur(),ar->getPrix_uht() ,ar->getTVA(), ar->getQuantité(), ar->getseuil(),ar->getID()), con);
 
 	SqlDataReader^ rd;
 	
@@ -384,6 +437,47 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	}
 }
 private: System::Void textBox8_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	NS_Composants::CArticle^ ar = gcnew NS_Composants::CArticle();
+	SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
+	int id = Int32::Parse(textBox7->Text);
+	ar->setID(id);
+	SqlCommand^ comm = gcnew SqlCommand(ar->afficher(ar->getID()), con);
+	con->Open();
+	SqlDataReader^ rd = comm->ExecuteReader();
+	dataGridView1->Hide();
+	dataGridView2->Show();
+	while (rd->Read())
+	{
+		textBox1->Text = rd->GetString(1);
+		textBox2->Text = rd->GetString(2);
+		textBox3->Text = rd->GetString(3);
+		textBox4->Text = Convert::ToString(rd->GetInt32(7));
+		textBox5->Text = Convert::ToString(rd->GetInt32(5));
+		textBox6->Text = Convert::ToString(rd->GetInt32(6));
+		textBox8->Text = Convert::ToString(rd->GetDouble(4));
+
+	}
+	con->Close();
+	SqlDataAdapter^ da = gcnew SqlDataAdapter(ar->afficher(ar->getID()), con);
+	DataTable^ dt = gcnew DataTable();
+	dt->Clear();
+	da->Fill(dt);
+	bindingSource2->DataSource = dt;
+	dataGridView2->DataSource = bindingSource2;
+}
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+	SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
+	SqlDataAdapter^ sda = gcnew SqlDataAdapter("SELECT * FROM Article", con);
+	DataTable^ dt = gcnew DataTable();
+	dataGridView2->Hide();
+	dataGridView1->Show();
+	sda->Fill(dt);
+	bindingSource1->DataSource = dt;
+	dataGridView1->DataSource = bindingSource1;
+}
+private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

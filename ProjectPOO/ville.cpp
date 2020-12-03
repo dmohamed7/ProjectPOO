@@ -31,4 +31,12 @@ namespace NS_Composants
 	{
 		return "INSERT INTO Ville(Ville) values('" + vile + "')";
 	}
+	String^ ville::modifier(String^ a,int b)
+	{
+		return "UPDATE Ville SET ville = '" + a + "' WHERE ID_VILLE = " + b + "";
+	}
+	String^ ville::supprimer(int^ a)
+	{
+		return "delete from Ville WHERE ID_VILLE=" + a + "";
+	}
 }

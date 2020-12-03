@@ -14,20 +14,25 @@ namespace NS_Composants
 		String^ date;
 		String^ date2;
 		String^ nom_c;
-		
+		int Ville;
 	public:
 		void setAdd_facturation(String^ adresse);
 		void setadd_livraison(String^ adresse);
 		void setDate(String^ a);
 		void setDate2(String^ a);
 		String^ creer(String^, String^, String^, String^);
+		String^ creer(String^ a,int b);
 		String^ modifier(String^, String^, String^, String^,int id);
+		String^ modifier(String^ a, int b);
 		String^ supprimer(int a);
+		String^ supprimer1(int a);
 		Client();
 		String^ getadd_livraison();
 		String^ getadd_facturation();
 		String^ getDate();
 		String^ getDate2();
+		void setvile(int a);
+		int getvile();
 
 
 

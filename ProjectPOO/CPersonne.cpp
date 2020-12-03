@@ -55,7 +55,12 @@ namespace NS_Composants
 		return "INSERT INTO Personnel(Nom_P, Prenom_P, Date_D_embauche) values('" + a +"','"+b+"','"+c+"');";
 	}
 
-	  String^ CPersonne::afficher(int a)
+	 String^ CPersonne::supprimer(int a)
+	 {
+		 return "delete from Personnel WHERE ID_Personnel =" + a + "";
+	 }
+
+	 String^ CPersonne::afficher(int a)
 	 {
 		return "SELECT * FROM Client where ID_Client=" + a + "";
 	 }

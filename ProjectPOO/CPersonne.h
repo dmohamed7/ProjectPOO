@@ -26,8 +26,8 @@ namespace NS_Composants
 		CPersonne();
 		virtual String^ creer(String^, String^, String^);
 		//void modifier();
-		//void supprimer();
-		String^ afficher(int a);
+		String^ supprimer(int a);
+		virtual String^ afficher(int a);
 
 
 

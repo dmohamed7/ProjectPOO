@@ -8,20 +8,20 @@ namespace NS_Composants
 	{
 	protected:
 		int ID;
-		int Ref_article;
+		String^ Ref_article;
 		String^ nom_article;
 		int quantité;
-		float prix_uht;
+		double prix_uht;
 		float prix_TTC;
 		int TVA;
 		String^ couleur;
 		int seuil;
 	public:
 		void setID(int id);
-		void setRef_article(int REF);
+		void setRef_article(String^ REF);
 		void setNom_article(String^ N);
 		void setQuantité(int q);
-		void setPrix_uht(float Prix);
+		void setPrix_uht(double Prix);
 		void setPrix_TTC(float prix);
 		void setTVA(int tva);
 		void setCouleur(String^ c);
@@ -29,15 +29,16 @@ namespace NS_Composants
 		int getID();
 		int  getseuil();
 		String^ getCouleur();
-		int getRef_article();
+		String^ getRef_article();
 		String^ getNom_article();
 		int getQuantité();
-		float getPrix_uht();
+		double getPrix_uht();
 		float getPrix_TTC();
 		int getTVA();
 		CArticle();
-		String^ ajouter(int a, String^ b, String^ c, float g, int d, int e, int f);
-		String^ modifier(int a, String^ b, String^ c,float g, int d, int e, int f, int id);
+		String^ ajouter(String^ a, String^ b, String^ c, double g, int d, int e, int f);
+		String^ modifier(String^ a, String^ b, String^ c,double g, int d, int e, int f, int id);
 		String^ supprimer(int d);
+		String^ afficher(int a);
 	};
 }
