@@ -52,6 +52,8 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::TextBox^ textBox3;
 	private: System::Windows::Forms::TextBox^ textBox4;
 	private: System::Windows::Forms::TextBox^ textBox5;
+	private: System::Windows::Forms::DataGridView^ dataGridView2;
+	private: System::Windows::Forms::TextBox^ textBox6;
 	protected:
 
 
@@ -95,17 +97,21 @@ namespace ProjectPOO {
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
+			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
+			this->button1->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->button1->BackColor = System::Drawing::Color::Transparent;
 			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->button1->FlatAppearance->BorderSize = 0;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
 			this->button1->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->button1->Location = System::Drawing::Point(332, 425);
+			this->button1->Location = System::Drawing::Point(419, 78);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(61, 73);
 			this->button1->TabIndex = 1;
@@ -120,7 +126,7 @@ namespace ProjectPOO {
 			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.Image")));
 			this->button2->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->button2->Location = System::Drawing::Point(399, 423);
+			this->button2->Location = System::Drawing::Point(413, 171);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(67, 74);
 			this->button2->TabIndex = 2;
@@ -135,7 +141,7 @@ namespace ProjectPOO {
 			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.Image")));
 			this->button3->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->button3->Location = System::Drawing::Point(472, 424);
+			this->button3->Location = System::Drawing::Point(403, 263);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(82, 74);
 			this->button3->TabIndex = 3;
@@ -150,7 +156,7 @@ namespace ProjectPOO {
 			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button4.Image")));
 			this->button4->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->button4->Location = System::Drawing::Point(560, 423);
+			this->button4->Location = System::Drawing::Point(411, 355);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(69, 73);
 			this->button4->TabIndex = 4;
@@ -172,7 +178,7 @@ namespace ProjectPOO {
 			// 
 			this->label2->AutoSize = true;
 			this->label2->BackColor = System::Drawing::Color::Transparent;
-			this->label2->Location = System::Drawing::Point(726, 55);
+			this->label2->Location = System::Drawing::Point(773, 30);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(21, 17);
 			this->label2->TabIndex = 6;
@@ -235,7 +241,7 @@ namespace ProjectPOO {
 			this->button5->FlatAppearance->BorderSize = 0;
 			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button5.Image")));
-			this->button5->Location = System::Drawing::Point(625, 55);
+			this->button5->Location = System::Drawing::Point(677, 41);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(51, 40);
 			this->button5->TabIndex = 23;
@@ -283,6 +289,25 @@ namespace ProjectPOO {
 			this->textBox5->Size = System::Drawing::Size(131, 22);
 			this->textBox5->TabIndex = 29;
 			// 
+			// dataGridView2
+			// 
+			this->dataGridView2->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView2->Location = System::Drawing::Point(725, 78);
+			this->dataGridView2->Name = L"dataGridView2";
+			this->dataGridView2->RowHeadersWidth = 51;
+			this->dataGridView2->RowTemplate->Height = 24;
+			this->dataGridView2->Size = System::Drawing::Size(181, 432);
+			this->dataGridView2->TabIndex = 30;
+			// 
+			// textBox6
+			// 
+			this->textBox6->BackColor = System::Drawing::SystemColors::HighlightText;
+			this->textBox6->Location = System::Drawing::Point(747, 50);
+			this->textBox6->Name = L"textBox6";
+			this->textBox6->Size = System::Drawing::Size(131, 22);
+			this->textBox6->TabIndex = 31;
+			// 
 			// GArticle
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -291,6 +316,8 @@ namespace ProjectPOO {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(907, 509);
+			this->Controls->Add(this->textBox6);
+			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->textBox5);
 			this->Controls->Add(this->textBox4);
 			this->Controls->Add(this->textBox3);
@@ -313,6 +340,7 @@ namespace ProjectPOO {
 			this->Name = L"GArticle";
 			this->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->Text = L"GArticle";
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

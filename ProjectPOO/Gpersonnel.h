@@ -163,9 +163,9 @@ namespace ProjectPOO {
 			this->Ajouter->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Ajouter->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Ajouter.Image")));
 			this->Ajouter->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->Ajouter->Location = System::Drawing::Point(818, 49);
+			this->Ajouter->Location = System::Drawing::Point(812, 49);
 			this->Ajouter->Name = L"Ajouter";
-			this->Ajouter->Size = System::Drawing::Size(109, 52);
+			this->Ajouter->Size = System::Drawing::Size(115, 52);
 			this->Ajouter->TabIndex = 6;
 			this->Ajouter->Text = L"Ajouter";
 			this->Ajouter->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -180,9 +180,9 @@ namespace ProjectPOO {
 			this->Modifier->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Modifier->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Modifier.Image")));
 			this->Modifier->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->Modifier->Location = System::Drawing::Point(818, 126);
+			this->Modifier->Location = System::Drawing::Point(812, 126);
 			this->Modifier->Name = L"Modifier";
-			this->Modifier->Size = System::Drawing::Size(112, 52);
+			this->Modifier->Size = System::Drawing::Size(118, 52);
 			this->Modifier->TabIndex = 7;
 			this->Modifier->Text = L"Modifier";
 			this->Modifier->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -198,9 +198,9 @@ namespace ProjectPOO {
 			this->Supprimer->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Supprimer->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Supprimer.Image")));
 			this->Supprimer->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->Supprimer->Location = System::Drawing::Point(818, 224);
+			this->Supprimer->Location = System::Drawing::Point(812, 224);
 			this->Supprimer->Name = L"Supprimer";
-			this->Supprimer->Size = System::Drawing::Size(112, 52);
+			this->Supprimer->Size = System::Drawing::Size(118, 52);
 			this->Supprimer->TabIndex = 8;
 			this->Supprimer->Text = L"Supprimer";
 			this->Supprimer->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -215,9 +215,9 @@ namespace ProjectPOO {
 			this->Afficher->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Afficher->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Afficher.Image")));
 			this->Afficher->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->Afficher->Location = System::Drawing::Point(818, 310);
+			this->Afficher->Location = System::Drawing::Point(812, 310);
 			this->Afficher->Name = L"Afficher";
-			this->Afficher->Size = System::Drawing::Size(112, 52);
+			this->Afficher->Size = System::Drawing::Size(118, 52);
 			this->Afficher->TabIndex = 9;
 			this->Afficher->Text = L"Afficher";
 			this->Afficher->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
