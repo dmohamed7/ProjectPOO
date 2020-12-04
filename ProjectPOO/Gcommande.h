@@ -70,9 +70,9 @@ namespace ProjectPOO {
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
 			this->button1->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->button1->Location = System::Drawing::Point(220, 263);
+			this->button1->Location = System::Drawing::Point(242, 249);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(61, 73);
+			this->button1->Size = System::Drawing::Size(86, 75);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Ajouter";
 			this->button1->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
@@ -85,9 +85,9 @@ namespace ProjectPOO {
 			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.Image")));
 			this->button2->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->button2->Location = System::Drawing::Point(270, 369);
+			this->button2->Location = System::Drawing::Point(282, 369);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(67, 74);
+			this->button2->Size = System::Drawing::Size(86, 74);
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"Modifier";
 			this->button2->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
@@ -100,9 +100,9 @@ namespace ProjectPOO {
 			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.Image")));
 			this->button3->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->button3->Location = System::Drawing::Point(624, 369);
+			this->button3->Location = System::Drawing::Point(625, 369);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(82, 74);
+			this->button3->Size = System::Drawing::Size(86, 74);
 			this->button3->TabIndex = 2;
 			this->button3->Text = L"Supprimer";
 			this->button3->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
@@ -115,13 +115,14 @@ namespace ProjectPOO {
 			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button4.Image")));
 			this->button4->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->button4->Location = System::Drawing::Point(702, 263);
+			this->button4->Location = System::Drawing::Point(724, 249);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(69, 73);
+			this->button4->Size = System::Drawing::Size(86, 75);
 			this->button4->TabIndex = 3;
 			this->button4->Text = L"Afficher";
 			this->button4->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->button4->UseVisualStyleBackColor = false;
+			this->button4->Click += gcnew System::EventHandler(this, &Gcommande::button4_Click);
 			// 
 			// Gcommande
 			// 
@@ -130,7 +131,7 @@ namespace ProjectPOO {
 			this->BackColor = System::Drawing::SystemColors::Control;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(980, 529);
+			this->ClientSize = System::Drawing::Size(1049, 524);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
@@ -142,5 +143,7 @@ namespace ProjectPOO {
 
 		}
 #pragma endregion
-	};
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }

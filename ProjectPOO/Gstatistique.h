@@ -57,7 +57,7 @@ namespace ProjectPOO {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(907, 509);
+			this->ClientSize = System::Drawing::Size(1049, 524);
 			this->DoubleBuffered = true;
 			this->Name = L"Gstatistique";
 			this->Text = L"Gstatistique";
