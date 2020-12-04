@@ -118,16 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Ajouter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACwAAAArCAIAAACM4/3uAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAQlJREFUWEftmDEKwlAMQL2GLoKLg5N08A4OgoM46eDo4u4VBCfP4g0ULUIPoOAN
-        3NQitDW1SVuiYPOHr4U83lBMaN4mtBL9ASWPaLj96q6bFwdyDCPY+VQcCzGJqG977HZeXJIgjpifV+wq
-        s7Uf4mphxBHs5EdxtTAaQWgEoRGERhAaQWQR7EUWnB4XyWmMYGObYgT71bKz0/L3EaBGkBrxcn3ZxBGA
-        443ZzI6ON4LrGAGwsR2T01lEQdhbPoqr3wjCIHn4ZUSKRhAaQWgEoRFEOSMAdpLZPsT/SSJMIprugB3O
-        i0sSTCKA9093YG1rUgAYRgAdb8IicCDHPMIPH7fAT70GdxxIiaInt8vAM8P+J1kAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="Modifier.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAC4AAAAqCAYAAADMKGkhAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
