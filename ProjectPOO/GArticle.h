@@ -52,11 +52,18 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::TextBox^ textBox3;
 	private: System::Windows::Forms::TextBox^ textBox4;
 	private: System::Windows::Forms::TextBox^ textBox5;
-	private: System::Windows::Forms::DataGridView^ dataGridView2;
-	private: System::Windows::Forms::TextBox^ textBox6;
+
+
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::TextBox^ textBox7;
+
+	private: System::Windows::Forms::BindingSource^ bindingSource1;
+	private: System::Windows::Forms::BindingSource^ bindingSource2;
+	private: System::Windows::Forms::TextBox^ textBox6;
 	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::DataGridView^ dataGridView2;
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::ComponentModel::IContainer^ components;
 	protected:
 
 
@@ -72,7 +79,7 @@ namespace ProjectPOO {
 		/// <summary>
 		/// Variable nécessaire au concepteur.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -81,6 +88,7 @@ namespace ProjectPOO {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(GArticle::typeid));
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
@@ -99,12 +107,18 @@ namespace ProjectPOO {
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
+			this->bindingSource2 = (gcnew System::Windows::Forms::BindingSource(this->components));
+			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -236,7 +250,7 @@ namespace ProjectPOO {
 			this->button5->FlatAppearance->BorderSize = 0;
 			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button5.Image")));
-			this->button5->Location = System::Drawing::Point(677, 41);
+			this->button5->Location = System::Drawing::Point(683, 12);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(51, 40);
 			this->button5->TabIndex = 23;
@@ -284,25 +298,6 @@ namespace ProjectPOO {
 			this->textBox5->Size = System::Drawing::Size(131, 22);
 			this->textBox5->TabIndex = 29;
 			// 
-			// dataGridView2
-			// 
-			this->dataGridView2->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView2->Location = System::Drawing::Point(725, 78);
-			this->dataGridView2->Name = L"dataGridView2";
-			this->dataGridView2->RowHeadersWidth = 51;
-			this->dataGridView2->RowTemplate->Height = 24;
-			this->dataGridView2->Size = System::Drawing::Size(181, 432);
-			this->dataGridView2->TabIndex = 30;
-			// 
-			// textBox6
-			// 
-			this->textBox6->BackColor = System::Drawing::SystemColors::HighlightText;
-			this->textBox6->Location = System::Drawing::Point(725, 50);
-			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(181, 22);
-			this->textBox6->TabIndex = 31;
-			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
@@ -320,6 +315,16 @@ namespace ProjectPOO {
 			this->textBox7->Size = System::Drawing::Size(131, 22);
 			this->textBox7->TabIndex = 33;
 			// 
+			// textBox6
+			// 
+			this->textBox6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->textBox6->BackColor = System::Drawing::SystemColors::Window;
+			this->textBox6->Location = System::Drawing::Point(740, 21);
+			this->textBox6->Name = L"textBox6";
+			this->textBox6->Size = System::Drawing::Size(164, 22);
+			this->textBox6->TabIndex = 35;
+			this->textBox6->TextChanged += gcnew System::EventHandler(this, &GArticle::textBox6_TextChanged);
+			// 
 			// label2
 			// 
 			this->label2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
@@ -327,11 +332,37 @@ namespace ProjectPOO {
 			this->label2->BackColor = System::Drawing::Color::Transparent;
 			this->label2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label2->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->label2->Location = System::Drawing::Point(744, 41);
+			this->label2->Location = System::Drawing::Point(750, 12);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(21, 17);
-			this->label2->TabIndex = 34;
+			this->label2->TabIndex = 36;
 			this->label2->Text = L"ID";
+			// 
+			// dataGridView2
+			// 
+			this->dataGridView2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->dataGridView2->BackgroundColor = System::Drawing::SystemColors::ControlLightLight;
+			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView2->GridColor = System::Drawing::SystemColors::ControlLightLight;
+			this->dataGridView2->Location = System::Drawing::Point(740, 41);
+			this->dataGridView2->Name = L"dataGridView2";
+			this->dataGridView2->RowHeadersWidth = 50;
+			this->dataGridView2->RowTemplate->Height = 24;
+			this->dataGridView2->Size = System::Drawing::Size(165, 468);
+			this->dataGridView2->TabIndex = 37;
+			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::ControlLightLight;
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->GridColor = System::Drawing::SystemColors::ControlLightLight;
+			this->dataGridView1->Location = System::Drawing::Point(740, 41);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->RowHeadersWidth = 50;
+			this->dataGridView1->RowTemplate->Height = 24;
+			this->dataGridView1->Size = System::Drawing::Size(165, 468);
+			this->dataGridView1->TabIndex = 38;
 			// 
 			// GArticle
 			// 
@@ -341,11 +372,12 @@ namespace ProjectPOO {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(907, 509);
+			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->label2);
+			this->Controls->Add(this->textBox6);
 			this->Controls->Add(this->textBox7);
 			this->Controls->Add(this->label8);
-			this->Controls->Add(this->textBox6);
-			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->textBox5);
 			this->Controls->Add(this->textBox4);
 			this->Controls->Add(this->textBox3);
@@ -367,7 +399,10 @@ namespace ProjectPOO {
 			this->Name = L"GArticle";
 			this->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->Text = L"GArticle";
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -375,5 +410,7 @@ namespace ProjectPOO {
 #pragma endregion
 	private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

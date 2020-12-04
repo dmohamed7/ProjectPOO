@@ -59,6 +59,14 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::TextBox^ textBox3;
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::Button^ button6;
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::Label^ label10;
+	private: System::Windows::Forms::Label^ label9;
+	private: System::Windows::Forms::Label^ label8;
+
+
 
 
 
@@ -98,6 +106,12 @@ namespace ProjectPOO {
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->label8 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
@@ -108,16 +122,18 @@ namespace ProjectPOO {
 			// 
 			this->button1->Anchor = System::Windows::Forms::AnchorStyles::Left;
 			this->button1->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
+			this->button1->BackColor = System::Drawing::Color::Transparent;
 			this->button1->FlatAppearance->BorderSize = 0;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
-			this->button1->Location = System::Drawing::Point(15, 166);
+			this->button1->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->button1->Location = System::Drawing::Point(22, 192);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(81, 92);
+			this->button1->Size = System::Drawing::Size(75, 69);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"ajouter";
 			this->button1->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
-			this->button1->UseVisualStyleBackColor = true;
+			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &Gclient::button1_Click);
 			// 
 			// button2
@@ -128,9 +144,10 @@ namespace ProjectPOO {
 			this->button2->FlatAppearance->BorderSize = 0;
 			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.Image")));
-			this->button2->Location = System::Drawing::Point(16, 392);
+			this->button2->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->button2->Location = System::Drawing::Point(649, 315);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(81, 100);
+			this->button2->Size = System::Drawing::Size(81, 72);
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"Afficher";
 			this->button2->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
@@ -146,9 +163,9 @@ namespace ProjectPOO {
 			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.Image")));
 			this->button3->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->button3->Location = System::Drawing::Point(16, 255);
+			this->button3->Location = System::Drawing::Point(649, 207);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(81, 86);
+			this->button3->Size = System::Drawing::Size(81, 72);
 			this->button3->TabIndex = 2;
 			this->button3->Text = L"Modifier";
 			this->button3->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
@@ -164,7 +181,7 @@ namespace ProjectPOO {
 			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button4.Image")));
 			this->button4->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->button4->Location = System::Drawing::Point(9, 339);
+			this->button4->Location = System::Drawing::Point(649, 105);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(88, 72);
 			this->button4->TabIndex = 3;
@@ -205,9 +222,9 @@ namespace ProjectPOO {
 				static_cast<System::Byte>(0)));
 			this->label3->Location = System::Drawing::Point(12, 167);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(200, 22);
+			this->label3->Size = System::Drawing::Size(218, 22);
 			this->label3->TabIndex = 6;
-			this->label3->Text = L"Date_premier_achat :";
+			this->label3->Text = L"Date du premier achat :";
 			// 
 			// label4
 			// 
@@ -232,7 +249,7 @@ namespace ProjectPOO {
 			// 
 			this->textBox5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->textBox5->BackColor = System::Drawing::SystemColors::Window;
-			this->textBox5->Location = System::Drawing::Point(744, 16);
+			this->textBox5->Location = System::Drawing::Point(742, 12);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(164, 22);
 			this->textBox5->TabIndex = 12;
@@ -245,7 +262,7 @@ namespace ProjectPOO {
 			this->label5->BackColor = System::Drawing::Color::Transparent;
 			this->label5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label5->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->label5->Location = System::Drawing::Point(754, 9);
+			this->label5->Location = System::Drawing::Point(744, 6);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(21, 17);
 			this->label5->TabIndex = 13;
@@ -271,7 +288,7 @@ namespace ProjectPOO {
 			this->dataGridView2->BackgroundColor = System::Drawing::SystemColors::ControlLightLight;
 			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView2->GridColor = System::Drawing::SystemColors::ControlLightLight;
-			this->dataGridView2->Location = System::Drawing::Point(744, 32);
+			this->dataGridView2->Location = System::Drawing::Point(742, 32);
 			this->dataGridView2->Name = L"dataGridView2";
 			this->dataGridView2->RowHeadersWidth = 50;
 			this->dataGridView2->RowTemplate->Height = 24;
@@ -316,6 +333,81 @@ namespace ProjectPOO {
 			this->textBox1->TabIndex = 8;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &Gclient::textBox1_TextChanged);
 			// 
+			// button6
+			// 
+			this->button6->BackColor = System::Drawing::Color::Transparent;
+			this->button6->FlatAppearance->BorderSize = 0;
+			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button6.Image")));
+			this->button6->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->button6->Location = System::Drawing::Point(22, 409);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(75, 69);
+			this->button6->TabIndex = 24;
+			this->button6->Text = L"ajouter";
+			this->button6->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
+			this->button6->UseVisualStyleBackColor = false;
+			// 
+			// label6
+			// 
+			this->label6->BackColor = System::Drawing::Color::Transparent;
+			this->label6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->label6->Font = (gcnew System::Drawing::Font(L"MS Reference Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label6->Location = System::Drawing::Point(34, 16);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(155, 22);
+			this->label6->TabIndex = 25;
+			this->label6->Text = L"L\'ajout du client  :";
+			// 
+			// label7
+			// 
+			this->label7->BackColor = System::Drawing::Color::Transparent;
+			this->label7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->label7->Font = (gcnew System::Drawing::Font(L"MS Reference Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label7->Location = System::Drawing::Point(12, 306);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(155, 22);
+			this->label7->TabIndex = 26;
+			this->label7->Text = L"ville  :";
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->BackColor = System::Drawing::Color::Transparent;
+			this->label10->Font = (gcnew System::Drawing::Font(L"MS Reference Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label10->Location = System::Drawing::Point(12, 340);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(212, 22);
+			this->label10->TabIndex = 29;
+			this->label10->Text = L"Adresse de logement : ";
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->BackColor = System::Drawing::Color::Transparent;
+			this->label9->Font = (gcnew System::Drawing::Font(L"MS Reference Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label9->Location = System::Drawing::Point(12, 374);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(203, 22);
+			this->label9->TabIndex = 30;
+			this->label9->Text = L"Adresse de livraison : ";
+			// 
+			// label8
+			// 
+			this->label8->BackColor = System::Drawing::Color::White;
+			this->label8->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->label8->Font = (gcnew System::Drawing::Font(L"MS Reference Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label8->Location = System::Drawing::Point(34, 273);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(278, 22);
+			this->label8->TabIndex = 31;
+			this->label8->Text = L"L\'ajout de l\'adresse du client  :";
+			// 
 			// Gclient
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -324,6 +416,12 @@ namespace ProjectPOO {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(909, 500);
+			this->Controls->Add(this->label8);
+			this->Controls->Add(this->label9);
+			this->Controls->Add(this->label10);
+			this->Controls->Add(this->label7);
+			this->Controls->Add(this->label6);
+			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->dataGridView1);
