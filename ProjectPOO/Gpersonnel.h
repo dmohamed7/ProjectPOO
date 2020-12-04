@@ -59,6 +59,10 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::RadioButton^ radioButton2;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ Ajouter;
+	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::TextBox^ textBox6;
+	private: System::Windows::Forms::Label^ label6;
 
 
 	protected:
@@ -97,6 +101,10 @@ namespace ProjectPOO {
 			this->radioButton2 = (gcnew System::Windows::Forms::RadioButton());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->Ajouter = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
+			this->label6 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -317,9 +325,58 @@ namespace ProjectPOO {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(112, 52);
 			this->button2->TabIndex = 24;
-			this->button2->Text = L"ajouter";
+			this->button2->Text = L"Ajouter";
 			this->button2->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->button2->UseVisualStyleBackColor = false;
+			// 
+			// Ajouter
+			// 
+			this->Ajouter->BackColor = System::Drawing::Color::Transparent;
+			this->Ajouter->FlatAppearance->BorderSize = 0;
+			this->Ajouter->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Ajouter->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Ajouter.Image")));
+			this->Ajouter->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->Ajouter->Location = System::Drawing::Point(818, 64);
+			this->Ajouter->Name = L"Ajouter";
+			this->Ajouter->Size = System::Drawing::Size(112, 52);
+			this->Ajouter->TabIndex = 25;
+			this->Ajouter->Text = L"Ajouter";
+			this->Ajouter->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->Ajouter->UseVisualStyleBackColor = false;
+			// 
+			// button5
+			// 
+			this->button5->BackColor = System::Drawing::Color::Transparent;
+			this->button5->FlatAppearance->BorderSize = 0;
+			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button5.Image")));
+			this->button5->Location = System::Drawing::Point(0, 386);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(51, 49);
+			this->button5->TabIndex = 26;
+			this->button5->UseVisualStyleBackColor = false;
+			// 
+			// textBox6
+			// 
+			this->textBox6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->textBox6->BackColor = System::Drawing::SystemColors::Window;
+			this->textBox6->Location = System::Drawing::Point(57, 399);
+			this->textBox6->Name = L"textBox6";
+			this->textBox6->Size = System::Drawing::Size(164, 22);
+			this->textBox6->TabIndex = 27;
+			// 
+			// label6
+			// 
+			this->label6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->label6->AutoSize = true;
+			this->label6->BackColor = System::Drawing::Color::Transparent;
+			this->label6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->label6->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->label6->Location = System::Drawing::Point(70, 386);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(21, 17);
+			this->label6->TabIndex = 28;
+			this->label6->Text = L"ID";
 			// 
 			// Gpersonnel
 			// 
@@ -328,6 +385,10 @@ namespace ProjectPOO {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(956, 549);
+			this->Controls->Add(this->label6);
+			this->Controls->Add(this->textBox6);
+			this->Controls->Add(this->button5);
+			this->Controls->Add(this->Ajouter);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->radioButton2);

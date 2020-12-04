@@ -39,7 +39,7 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Label^ label2;
+
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label5;
@@ -56,6 +56,7 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::TextBox^ textBox6;
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::TextBox^ textBox7;
+	private: System::Windows::Forms::Label^ label2;
 	protected:
 
 
@@ -86,7 +87,6 @@ namespace ProjectPOO {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
@@ -103,6 +103,7 @@ namespace ProjectPOO {
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -177,16 +178,6 @@ namespace ProjectPOO {
 			this->label1->Size = System::Drawing::Size(77, 17);
 			this->label1->TabIndex = 5;
 			this->label1->Text = L"reference :";
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->BackColor = System::Drawing::Color::Transparent;
-			this->label2->Location = System::Drawing::Point(773, 30);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(21, 17);
-			this->label2->TabIndex = 6;
-			this->label2->Text = L"ID";
 			// 
 			// label3
 			// 
@@ -307,9 +298,9 @@ namespace ProjectPOO {
 			// textBox6
 			// 
 			this->textBox6->BackColor = System::Drawing::SystemColors::HighlightText;
-			this->textBox6->Location = System::Drawing::Point(747, 50);
+			this->textBox6->Location = System::Drawing::Point(725, 50);
 			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(131, 22);
+			this->textBox6->Size = System::Drawing::Size(181, 22);
 			this->textBox6->TabIndex = 31;
 			// 
 			// label8
@@ -329,6 +320,19 @@ namespace ProjectPOO {
 			this->textBox7->Size = System::Drawing::Size(131, 22);
 			this->textBox7->TabIndex = 33;
 			// 
+			// label2
+			// 
+			this->label2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::Transparent;
+			this->label2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->label2->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->label2->Location = System::Drawing::Point(744, 41);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(21, 17);
+			this->label2->TabIndex = 34;
+			this->label2->Text = L"ID";
+			// 
 			// GArticle
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -337,6 +341,7 @@ namespace ProjectPOO {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(907, 509);
+			this->Controls->Add(this->label2);
 			this->Controls->Add(this->textBox7);
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->textBox6);
@@ -353,7 +358,6 @@ namespace ProjectPOO {
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
