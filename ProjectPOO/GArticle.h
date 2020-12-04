@@ -45,6 +45,13 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::MaskedTextBox^ maskedTextBox1;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::TextBox^ textBox3;
+	private: System::Windows::Forms::TextBox^ textBox4;
+	private: System::Windows::Forms::TextBox^ textBox5;
 	protected:
 
 
@@ -81,6 +88,13 @@ namespace ProjectPOO {
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->maskedTextBox1 = (gcnew System::Windows::Forms::MaskedTextBox());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -158,7 +172,7 @@ namespace ProjectPOO {
 			// 
 			this->label2->AutoSize = true;
 			this->label2->BackColor = System::Drawing::Color::Transparent;
-			this->label2->Location = System::Drawing::Point(682, 47);
+			this->label2->Location = System::Drawing::Point(726, 55);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(21, 17);
 			this->label2->TabIndex = 6;
@@ -215,6 +229,60 @@ namespace ProjectPOO {
 			this->label7->Text = L"Désignation :";
 			this->label7->Click += gcnew System::EventHandler(this, &GArticle::label7_Click);
 			// 
+			// button5
+			// 
+			this->button5->BackColor = System::Drawing::Color::Transparent;
+			this->button5->FlatAppearance->BorderSize = 0;
+			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button5.Image")));
+			this->button5->Location = System::Drawing::Point(625, 55);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(51, 40);
+			this->button5->TabIndex = 23;
+			this->button5->UseVisualStyleBackColor = false;
+			// 
+			// maskedTextBox1
+			// 
+			this->maskedTextBox1->Location = System::Drawing::Point(118, 78);
+			this->maskedTextBox1->Name = L"maskedTextBox1";
+			this->maskedTextBox1->Size = System::Drawing::Size(131, 22);
+			this->maskedTextBox1->TabIndex = 24;
+			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(132, 119);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(131, 22);
+			this->textBox1->TabIndex = 25;
+			// 
+			// textBox2
+			// 
+			this->textBox2->Location = System::Drawing::Point(111, 269);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(131, 22);
+			this->textBox2->TabIndex = 26;
+			// 
+			// textBox3
+			// 
+			this->textBox3->Location = System::Drawing::Point(119, 218);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(131, 22);
+			this->textBox3->TabIndex = 27;
+			// 
+			// textBox4
+			// 
+			this->textBox4->Location = System::Drawing::Point(106, 171);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(131, 22);
+			this->textBox4->TabIndex = 28;
+			// 
+			// textBox5
+			// 
+			this->textBox5->Location = System::Drawing::Point(102, 320);
+			this->textBox5->Name = L"textBox5";
+			this->textBox5->Size = System::Drawing::Size(131, 22);
+			this->textBox5->TabIndex = 29;
+			// 
 			// GArticle
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -223,6 +291,13 @@ namespace ProjectPOO {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(907, 509);
+			this->Controls->Add(this->textBox5);
+			this->Controls->Add(this->textBox4);
+			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->textBox2);
+			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->maskedTextBox1);
+			this->Controls->Add(this->button5);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label5);
