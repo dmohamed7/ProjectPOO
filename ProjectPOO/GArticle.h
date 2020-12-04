@@ -54,6 +54,8 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::TextBox^ textBox5;
 	private: System::Windows::Forms::DataGridView^ dataGridView2;
 	private: System::Windows::Forms::TextBox^ textBox6;
+	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::TextBox^ textBox7;
 	protected:
 
 
@@ -99,6 +101,8 @@ namespace ProjectPOO {
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -190,9 +194,9 @@ namespace ProjectPOO {
 			this->label3->BackColor = System::Drawing::Color::Transparent;
 			this->label3->Location = System::Drawing::Point(35, 320);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(61, 17);
+			this->label3->Size = System::Drawing::Size(47, 17);
 			this->label3->TabIndex = 7;
-			this->label3->Text = L"prix TH :";
+			this->label3->Text = L"Seuil :";
 			// 
 			// label4
 			// 
@@ -284,7 +288,7 @@ namespace ProjectPOO {
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(102, 320);
+			this->textBox5->Location = System::Drawing::Point(88, 320);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(131, 22);
 			this->textBox5->TabIndex = 29;
@@ -308,6 +312,23 @@ namespace ProjectPOO {
 			this->textBox6->Size = System::Drawing::Size(131, 22);
 			this->textBox6->TabIndex = 31;
 			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->BackColor = System::Drawing::Color::Transparent;
+			this->label8->Location = System::Drawing::Point(35, 367);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(61, 17);
+			this->label8->TabIndex = 32;
+			this->label8->Text = L"prix TH :";
+			// 
+			// textBox7
+			// 
+			this->textBox7->Location = System::Drawing::Point(102, 362);
+			this->textBox7->Name = L"textBox7";
+			this->textBox7->Size = System::Drawing::Size(131, 22);
+			this->textBox7->TabIndex = 33;
+			// 
 			// GArticle
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -316,6 +337,8 @@ namespace ProjectPOO {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(907, 509);
+			this->Controls->Add(this->textBox7);
+			this->Controls->Add(this->label8);
 			this->Controls->Add(this->textBox6);
 			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->textBox5);
