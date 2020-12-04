@@ -15,15 +15,17 @@ namespace NS_Composants
 		String^ date2;
 		String^ nom_c;
 		int Ville;
+
 	public:
 		void setAdd_facturation(String^ adresse);
 		void setadd_livraison(String^ adresse);
 		void setDate(String^ a);
 		void setDate2(String^ a);
 		String^ creer(String^, String^, String^, String^);
-		String^ creer(String^ a,int b);
+		String^ creer1(String^ a,String^ c, String^ ,String^ b);
 		String^ modifier(String^, String^, String^, String^,int id);
-		String^ modifier(String^ a, int b);
+		String^ modifier(String^ a,String^ c,String^, int b);
+		String^ afficher1(int a);
 		String^ supprimer(int a);
 		String^ supprimer1(int a);
 		Client();
@@ -33,6 +35,7 @@ namespace NS_Composants
 		String^ getDate2();
 		void setvile(int a);
 		int getvile();
+		String^ afficher_tous();
 
 
 

@@ -126,11 +126,13 @@
     <ClCompile Include="GArticle.cpp" />
     <ClCompile Include="Gclient.cpp" />
     <ClCompile Include="Gcommande.cpp" />
+    <ClCompile Include="Gestion_Client.cpp" />
     <ClCompile Include="Gpersonnel.cpp" />
     <ClCompile Include="Gstatistique.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="CPersonne.cpp" />
     <ClCompile Include="CPersonnel.cpp" />
+    <ClCompile Include="SQL.cpp" />
     <ClCompile Include="ville.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +148,7 @@
     <ClInclude Include="Gcommande.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Gestion_Client.h" />
     <ClInclude Include="Gpersonnel.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -157,6 +160,7 @@
     </ClInclude>
     <ClInclude Include="CPersonne.h" />
     <ClInclude Include="CPersonnel.h" />
+    <ClInclude Include="SQL.h" />
     <ClInclude Include="ville.h" />
   </ItemGroup>
   <ItemGroup>

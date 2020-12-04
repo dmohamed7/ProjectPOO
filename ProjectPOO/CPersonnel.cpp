@@ -31,9 +31,14 @@ namespace NS_Composants
 		this->encadreur = 0;
 		this->adresse = "";
 	}
-	String^ CPersonnel::creer(String^ a , String^ b, String^ c,String^ d, int e)
+	String^ CPersonnel::creer(String^ a , String^ b, String^ c,String^ d, String^ e)
 	{
-		return "INSERT INTO Personnel(Nom_P, Prenom_P, Date_D_embauche,Add_Personnel,ID_Personnel_Supervise) values('" + a + "','" + b + "','" + c + "','"+d+"',(SELECT ID_Personnel FROM Personnel WHERE ID_Personnel ="+e+"));";
+		return "INSERT INTO Personnel(Nom_P, Prenom_P, Date_D_embauche,Add_Personnel,ID_Personnel_Supervise) values('" + a + "','" + b + "','" + c + "','"+ d +"',(SELECT ID_Personnel FROM Personnel WHERE Nom_P = '"+ e +"'));";
+	}
+	String^ CPersonnel::creer1(String^ a, String^ b, String^ c, String^ d)
+	{
+		return "INSERT INTO Personnel(Nom_P, Prenom_P, Date_D_embauche,Add_Personnel) values('" + a + "','" + b + "','" + c + "','" + d +"');";
+	
 	}
 	String^ CPersonnel::afficher1(int a)
 	{

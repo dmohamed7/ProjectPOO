@@ -408,10 +408,11 @@ private: System::Void textBox7_TextChanged(System::Object^ sender, System::Event
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	try {
-	SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
+		SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
 	NS_Composants::CArticle^ ar = gcnew NS_Composants::CArticle();
 	ar->setNom_article(textBox2->Text);
-	int id = int::Parse(textBox7->Text);
+	int id = Int32::Parse(textBox7->Text);
+	ar->setID(id);
 	double prix = double::Parse(textBox8->Text);
 	ar->setPrix_uht(prix);
 	ar->setRef_article(textBox1->Text);

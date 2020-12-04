@@ -22,7 +22,8 @@ namespace NS_Composants
 		void setNomp(String^ nom);
 		String^ Getnomp();
 		CPersonnel();
-		String^ creer(String^, String^, String^,String^,int);
+		String^ creer(String^, String^, String^,String^,String^);
+		String^ creer1(String^, String^, String^, String^);
 		String^ afficher1(int a);
 
 

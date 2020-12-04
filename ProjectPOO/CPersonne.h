@@ -25,9 +25,11 @@ namespace NS_Composants
 	    void setDate(String^ a);
 		CPersonne();
 		virtual String^ creer(String^, String^, String^);
+		
 		//void modifier();
 		String^ supprimer(int a);
 		virtual String^ afficher(int a);
+
 
 
 

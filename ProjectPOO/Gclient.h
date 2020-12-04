@@ -1,7 +1,5 @@
 #pragma once
-#include"CPersonne.h"
-#include"Client.h"
-#include"ville.h"
+#include"Gestion_Client.h"
 using namespace System::Data::SqlClient;
 namespace ProjectPOO {
 
@@ -61,8 +59,12 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::TextBox^ textBox6;
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::TextBox^ textBox7;
-	private: System::Windows::Forms::TextBox^ textBox8;
 	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::TextBox^ textBox8;
+	private: System::Windows::Forms::Button^ button6;
+
+
+
 	private: System::ComponentModel::IContainer^ components;
 
 	private:
@@ -103,8 +105,9 @@ namespace ProjectPOO {
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
+			this->button6 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
@@ -113,17 +116,17 @@ namespace ProjectPOO {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(74, 386);
+			this->button1->Location = System::Drawing::Point(15, 167);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(117, 57);
+			this->button1->Size = System::Drawing::Size(109, 40);
 			this->button1->TabIndex = 0;
-			this->button1->Text = L"ajouter";
+			this->button1->Text = L"ajouter_client";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &Gclient::button1_Click);
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(263, 386);
+			this->button2->Location = System::Drawing::Point(401, 376);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(117, 57);
 			this->button2->TabIndex = 1;
@@ -133,7 +136,7 @@ namespace ProjectPOO {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(460, 386);
+			this->button3->Location = System::Drawing::Point(625, 376);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(117, 57);
 			this->button3->TabIndex = 2;
@@ -143,7 +146,7 @@ namespace ProjectPOO {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(681, 386);
+			this->button4->Location = System::Drawing::Point(764, 376);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(117, 57);
 			this->button4->TabIndex = 3;
@@ -154,7 +157,7 @@ namespace ProjectPOO {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(12, 69);
+			this->label1->Location = System::Drawing::Point(12, 9);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(54, 17);
 			this->label1->TabIndex = 4;
@@ -163,7 +166,7 @@ namespace ProjectPOO {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(12, 104);
+			this->label2->Location = System::Drawing::Point(4, 49);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(74, 17);
 			this->label2->TabIndex = 5;
@@ -172,7 +175,7 @@ namespace ProjectPOO {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(0, 193);
+			this->label3->Location = System::Drawing::Point(0, 127);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(137, 17);
 			this->label3->TabIndex = 6;
@@ -181,7 +184,7 @@ namespace ProjectPOO {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(0, 143);
+			this->label4->Location = System::Drawing::Point(0, 81);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(124, 17);
 			this->label4->TabIndex = 7;
@@ -189,7 +192,7 @@ namespace ProjectPOO {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(158, 69);
+			this->textBox1->Location = System::Drawing::Point(158, 6);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(100, 22);
 			this->textBox1->TabIndex = 8;
@@ -197,14 +200,14 @@ namespace ProjectPOO {
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(158, 104);
+			this->textBox2->Location = System::Drawing::Point(158, 44);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(100, 22);
 			this->textBox2->TabIndex = 9;
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(158, 138);
+			this->textBox3->Location = System::Drawing::Point(158, 76);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(100, 22);
 			this->textBox3->TabIndex = 10;
@@ -212,7 +215,7 @@ namespace ProjectPOO {
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(158, 190);
+			this->textBox4->Location = System::Drawing::Point(158, 124);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(100, 22);
 			this->textBox4->TabIndex = 11;
@@ -298,23 +301,34 @@ namespace ProjectPOO {
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(100, 22);
 			this->textBox7->TabIndex = 20;
-			// 
-			// textBox8
-			// 
-			this->textBox8->Location = System::Drawing::Point(158, 305);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(100, 22);
-			this->textBox8->TabIndex = 21;
-			this->textBox8->TextChanged += gcnew System::EventHandler(this, &Gclient::textBox8_TextChanged);
+			this->textBox7->TextChanged += gcnew System::EventHandler(this, &Gclient::textBox7_TextChanged);
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(12, 310);
+			this->label8->Location = System::Drawing::Point(12, 321);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(48, 17);
-			this->label8->TabIndex = 22;
-			this->label8->Text = L"id_vile";
+			this->label8->Size = System::Drawing::Size(119, 17);
+			this->label8->TabIndex = 21;
+			this->label8->Text = L"adresse_livraison";
+			// 
+			// textBox8
+			// 
+			this->textBox8->Location = System::Drawing::Point(158, 321);
+			this->textBox8->Name = L"textBox8";
+			this->textBox8->Size = System::Drawing::Size(100, 22);
+			this->textBox8->TabIndex = 22;
+			this->textBox8->TextChanged += gcnew System::EventHandler(this, &Gclient::textBox8_TextChanged);
+			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(26, 376);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(138, 57);
+			this->button6->TabIndex = 23;
+			this->button6->Text = L"ajouter_add_client";
+			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &Gclient::button6_Click);
 			// 
 			// Gclient
 			// 
@@ -323,8 +337,9 @@ namespace ProjectPOO {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->ClientSize = System::Drawing::Size(904, 509);
-			this->Controls->Add(this->label8);
+			this->Controls->Add(this->button6);
 			this->Controls->Add(this->textBox8);
+			this->Controls->Add(this->label8);
 			this->Controls->Add(this->textBox7);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->textBox6);
@@ -363,33 +378,19 @@ namespace ProjectPOO {
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
 	NS_Composants::Client^ cl = gcnew NS_Composants::Client();
-	NS_Composants::ville^ vl = gcnew NS_Composants::ville();
-	vl->setvile(textBox6->Text);
 	cl->setNom(textBox1->Text);
     cl->setPrenom(textBox2->Text);
-	cl->setadd_livraison(textBox7->Text);
-
-	int id = Int32::Parse(textBox8->Text);
-	cl->setvile(id);
 	String^ date = Convert::ToDateTime(textBox3->Text).ToString("yyyy-MM-dd");
 	String^ date2 = Convert::ToDateTime(textBox4->Text).ToString("yyyy-MM-dd");
 	cl->setDate(date);
 	cl->setDate2(date2);
 	SqlCommand^ com = gcnew SqlCommand(cl->creer(cl->getNom(),cl->getPrenom(),cl->getDate(),cl->getDate2()), con);
-	SqlCommand^ co = gcnew SqlCommand(vl->ajouter(vl->getvile()), con);
-	SqlCommand^ comm = gcnew SqlCommand(cl->creer(cl->getadd_livraison(),cl->getvile()), con);
+
 	SqlDataReader^ rd;
-	SqlDataReader^ r;
-	SqlDataReader^ g;
+	
 	try {
 		con->Open();
 		rd = com->ExecuteReader();
-		con->Close();
-		con->Open();
-		r = co->ExecuteReader();
-		con->Close();
-		con->Open();
-		g = comm->ExecuteReader();
 		con->Close();
 		MessageBox::Show("client enregistree");
 
@@ -404,28 +405,35 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	try {
-		NS_Composants::Client^ cl = gcnew NS_Composants::Client();
-		SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
+
 		int id = Int32::Parse(textBox5->Text);
-		cl->setID(id);
-		SqlCommand^ comm = gcnew SqlCommand(cl->afficher(cl->getID()), con);
-		con->Open();
-		SqlDataReader^ rd = comm->ExecuteReader();
-		dataGridView1->Hide();
-		dataGridView2->Show();
+		Gestion_Client gc(id);
+		
+		gc.Afficher();
+		SqlDataReader^ rd = gc.getReader();
 		while (rd->Read())
 		{
 			textBox1->Text = rd->GetString(1);
 			textBox2->Text = rd->GetString(2);
 			textBox3->Text = Convert::ToString(rd->GetDateTime(3));
 			textBox4->Text = Convert::ToString(rd->GetDateTime(4));
-			
+
 		}
-		con->Close();
-		SqlDataAdapter^ da = gcnew SqlDataAdapter(cl->afficher(cl->getID()), con);
-		DataTable^ dt = gcnew DataTable();
-		dt->Clear();
-		da->Fill(dt);
+		dataGridView1->Hide();
+		dataGridView2->Show();
+		rd->Close();
+		
+		gc.afficher1();
+		SqlDataReader^ r = gc.getReader1();
+		DataTable^ dt = gc.getData();
+		
+		while (r->Read())
+		{
+			textBox7->Text = r->GetString(1);
+			textBox8->Text = r->GetString(2);
+
+		}
+		
 		bindingSource2->DataSource = dt;
 		dataGridView2->DataSource = bindingSource2;
 		
@@ -442,7 +450,9 @@ private: System::Void textBox5_TextChanged(System::Object^ sender, System::Event
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 	SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
-	SqlDataAdapter^ sda = gcnew SqlDataAdapter("SELECT * FROM Client", con);
+	NS_Composants::Client^ cl = gcnew NS_Composants::Client();
+	SqlDataAdapter^ sda = gcnew SqlDataAdapter(cl->afficher_tous(), con);
+
 	DataTable^ dt = gcnew DataTable();
 	dataGridView2->Hide();
 	dataGridView1->Show();
@@ -455,28 +465,24 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
 		NS_Composants::Client^ cl = gcnew NS_Composants::Client();
 		NS_Composants::ville^ vl = gcnew NS_Composants::ville();
-		vl->setvile(textBox6->Text);
-		int id = Int32::Parse(textBox8->Text);
-		cl->setadd_livraison(textBox7->Text);
+		int id = Int32::Parse(textBox5->Text);
+		cl->setadd_livraison(textBox8->Text);
+		cl->setAdd_facturation(textBox7->Text);
 		cl->setNom(textBox1->Text);
 		cl->setPrenom(textBox2->Text);
 		cl->setID(id);
-		vl->setID(id);
 		String^ date = Convert::ToDateTime(textBox3->Text).ToString("yyyy-MM-dd");
 		String^ date2 = Convert::ToDateTime(textBox4->Text).ToString("yyyy-MM-dd");
 		cl->setDate(date);
 		cl->setDate2(date2);
+		vl->setvile(textBox6->Text);
 		SqlCommand^ cmd = gcnew SqlCommand(cl->modifier(cl->getNom(), cl->getPrenom(), cl->getDate(), cl->getDate2(), cl->getID()), con);
-		SqlCommand^ cm = gcnew SqlCommand(cl->modifier(cl->getadd_livraison(),cl->getID()), con);
-		SqlCommand^ com = gcnew SqlCommand(vl->modifier(vl->getvile(), vl->getID()), con);
+		SqlCommand^ cm = gcnew SqlCommand(cl->modifier(cl->getadd_facturation(),cl->getadd_livraison(),vl->getvile(),cl->getID()), con);
 		con->Open();
 		SqlDataReader^ dr = cmd->ExecuteReader();
 		con->Close();
 		con->Open();
 		SqlDataReader^ d = cm->ExecuteReader();
-		con->Close();
-		con->Open();
-		SqlDataReader^ drr = com->ExecuteReader();
 		con->Close();
 		MessageBox::Show("Modification Reussi");
 		con->Close();
@@ -495,19 +501,15 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 		int ID = Int32::Parse(textBox5->Text);
 		cl->setID(ID);
 		
-		int id = Int32::Parse(textBox8->Text);
+		int id = Int32::Parse(textBox5->Text);
 		vl->setID(id);
 		SqlCommand^ cmd = gcnew SqlCommand(cl->supprimer(cl->getID()), con);
-		SqlCommand^ cm = gcnew SqlCommand(cl->supprimer1(vl->getID()), con);
-		SqlCommand^ c = gcnew SqlCommand(vl->supprimer(vl->getID()), con);
+		SqlCommand^ cm = gcnew SqlCommand(cl->supprimer1(cl->getID()), con);
 		con->Open();
 		SqlDataReader^ dr = cmd->ExecuteReader();
 		con->Close();
 		con->Open();
 		SqlDataReader^ drr = cm->ExecuteReader();
-		con->Close();
-		con->Open();
-		SqlDataReader^ d = c->ExecuteReader();
 		con->Close();
 		MessageBox::Show("Client supprimée avec succée");
 		con->Close();
@@ -524,7 +526,35 @@ private: System::Void dataGridView2_CellContentClick(System::Object^ sender, Sys
 }
 private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
+
+
+
 private: System::Void textBox8_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox7_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+	SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
+	NS_Composants::Client^ cl = gcnew NS_Composants::Client();
+	NS_Composants::ville^ vl = gcnew NS_Composants::ville();
+	cl->setNom(textBox1->Text);
+	vl->setvile(textBox6->Text);
+	cl->setadd_livraison(textBox8->Text);
+	cl->setAdd_facturation(textBox7->Text);
+	SqlCommand^ com = gcnew SqlCommand(cl->creer1(cl->getadd_facturation(),cl->getadd_livraison(),cl->getNom(),vl->getvile()), con);
+	SqlDataReader^ g;
+	try {
+		
+		con->Open();
+		g = com->ExecuteReader();
+		con->Close();
+		MessageBox::Show("client enregistree");
+
+	}
+	catch (Exception^ ex)
+	{
+		MessageBox::Show(ex->Message);
+	}
 }
 };
 }

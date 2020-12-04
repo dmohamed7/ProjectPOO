@@ -34,6 +34,8 @@ namespace ProjectPOO {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Button^ button1;
+	protected:
 
 	private:
 		/// <summary>
@@ -49,7 +51,18 @@ namespace ProjectPOO {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Gcommande::typeid));
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(110, 387);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(143, 58);
+			this->button1->TabIndex = 0;
+			this->button1->Text = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Gcommande::button1_Click);
 			// 
 			// Gcommande
 			// 
@@ -58,6 +71,7 @@ namespace ProjectPOO {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->ClientSize = System::Drawing::Size(907, 509);
+			this->Controls->Add(this->button1);
 			this->DoubleBuffered = true;
 			this->Name = L"Gcommande";
 			this->Text = L"Gcommande";
@@ -65,5 +79,9 @@ namespace ProjectPOO {
 
 		}
 #pragma endregion
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		
+		
+	}
 	};
 }
