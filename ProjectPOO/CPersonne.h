@@ -24,10 +24,12 @@ namespace NS_Composants
 		void setPrenom(String^ P);
 	    void setDate(String^ a);
 		CPersonne();
-		String^ creer(String^, String^, String^);
+		virtual String^ creer(String^, String^, String^);
+		
 		//void modifier();
-		//void supprimer();
-		String^ afficher(int a);
+		String^ supprimer(int a);
+		virtual String^ afficher(int a);
+
 
 
 
