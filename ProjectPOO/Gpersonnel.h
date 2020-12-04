@@ -55,7 +55,8 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::TextBox^ textBox5;
-	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::RadioButton^ radioButton1;
+
 
 	protected:
 
@@ -90,7 +91,7 @@ namespace ProjectPOO {
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -100,7 +101,7 @@ namespace ProjectPOO {
 			this->ID->BackColor = System::Drawing::Color::Transparent;
 			this->ID->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ID->Location = System::Drawing::Point(12, 76);
+			this->ID->Location = System::Drawing::Point(12, 153);
 			this->ID->Name = L"ID";
 			this->ID->Size = System::Drawing::Size(33, 25);
 			this->ID->TabIndex = 0;
@@ -113,7 +114,7 @@ namespace ProjectPOO {
 			this->label1->BackColor = System::Drawing::Color::Transparent;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(12, 126);
+			this->label1->Location = System::Drawing::Point(12, 189);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(63, 25);
 			this->label1->TabIndex = 1;
@@ -125,7 +126,7 @@ namespace ProjectPOO {
 			this->label2->BackColor = System::Drawing::Color::Transparent;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(12, 175);
+			this->label2->Location = System::Drawing::Point(12, 235);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(93, 25);
 			this->label2->TabIndex = 2;
@@ -134,7 +135,7 @@ namespace ProjectPOO {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(122, 76);
+			this->textBox1->Location = System::Drawing::Point(51, 153);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(155, 22);
 			this->textBox1->TabIndex = 3;
@@ -142,7 +143,7 @@ namespace ProjectPOO {
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(122, 126);
+			this->textBox2->Location = System::Drawing::Point(81, 193);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(155, 22);
 			this->textBox2->TabIndex = 4;
@@ -150,7 +151,7 @@ namespace ProjectPOO {
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(122, 179);
+			this->textBox3->Location = System::Drawing::Point(111, 235);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(152, 22);
 			this->textBox3->TabIndex = 5;
@@ -230,7 +231,7 @@ namespace ProjectPOO {
 			this->label3->BackColor = System::Drawing::Color::Transparent;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(12, 224);
+			this->label3->Location = System::Drawing::Point(12, 275);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(99, 25);
 			this->label3->TabIndex = 10;
@@ -238,7 +239,7 @@ namespace ProjectPOO {
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(122, 228);
+			this->textBox4->Location = System::Drawing::Point(117, 279);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(152, 22);
 			this->textBox4->TabIndex = 11;
@@ -262,7 +263,7 @@ namespace ProjectPOO {
 			this->label4->BackColor = System::Drawing::Color::Transparent;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(12, 286);
+			this->label4->Location = System::Drawing::Point(12, 321);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(176, 25);
 			this->label4->TabIndex = 13;
@@ -270,24 +271,22 @@ namespace ProjectPOO {
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(194, 286);
+			this->textBox5->Location = System::Drawing::Point(194, 324);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(152, 22);
 			this->textBox5->TabIndex = 14;
 			this->textBox5->TextChanged += gcnew System::EventHandler(this, &Gpersonnel::textBox5_TextChanged);
 			// 
-			// button1
+			// radioButton1
 			// 
-			this->button1->BackColor = System::Drawing::Color::Transparent;
-			this->button1->FlatAppearance->BorderSize = 0;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
-			this->button1->Location = System::Drawing::Point(283, 68);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(40, 33);
-			this->button1->TabIndex = 15;
-			this->button1->UseVisualStyleBackColor = false;
-			this->button1->Click += gcnew System::EventHandler(this, &Gpersonnel::button1_Click);
+			this->radioButton1->AutoSize = true;
+			this->radioButton1->Location = System::Drawing::Point(211, 49);
+			this->radioButton1->Name = L"radioButton1";
+			this->radioButton1->Size = System::Drawing::Size(92, 21);
+			this->radioButton1->TabIndex = 20;
+			this->radioButton1->TabStop = true;
+			this->radioButton1->Text = L"personnel";
+			this->radioButton1->UseVisualStyleBackColor = true;
 			// 
 			// Gpersonnel
 			// 
@@ -296,7 +295,7 @@ namespace ProjectPOO {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(956, 549);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->radioButton1);
 			this->Controls->Add(this->textBox5);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->dataGridView1);
