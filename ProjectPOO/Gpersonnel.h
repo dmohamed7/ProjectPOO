@@ -58,6 +58,7 @@ namespace ProjectPOO {
 	private: System::Windows::Forms::RadioButton^ radioButton1;
 	private: System::Windows::Forms::RadioButton^ radioButton2;
 	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Button^ button2;
 
 
 	protected:
@@ -95,6 +96,7 @@ namespace ProjectPOO {
 			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
 			this->radioButton2 = (gcnew System::Windows::Forms::RadioButton());
 			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -167,7 +169,7 @@ namespace ProjectPOO {
 			this->Modifier->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Modifier->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Modifier.Image")));
 			this->Modifier->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->Modifier->Location = System::Drawing::Point(812, 126);
+			this->Modifier->Location = System::Drawing::Point(812, 153);
 			this->Modifier->Name = L"Modifier";
 			this->Modifier->Size = System::Drawing::Size(118, 52);
 			this->Modifier->TabIndex = 7;
@@ -185,7 +187,7 @@ namespace ProjectPOO {
 			this->Supprimer->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Supprimer->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Supprimer.Image")));
 			this->Supprimer->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->Supprimer->Location = System::Drawing::Point(812, 224);
+			this->Supprimer->Location = System::Drawing::Point(812, 235);
 			this->Supprimer->Name = L"Supprimer";
 			this->Supprimer->Size = System::Drawing::Size(118, 52);
 			this->Supprimer->TabIndex = 8;
@@ -304,6 +306,21 @@ namespace ProjectPOO {
 			this->label5->Text = L"Vous voulez ajouter \?\r\n";
 			this->label5->Click += gcnew System::EventHandler(this, &Gpersonnel::label5_Click);
 			// 
+			// button2
+			// 
+			this->button2->BackColor = System::Drawing::Color::Transparent;
+			this->button2->FlatAppearance->BorderSize = 0;
+			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.Image")));
+			this->button2->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->button2->Location = System::Drawing::Point(812, 64);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(112, 52);
+			this->button2->TabIndex = 24;
+			this->button2->Text = L"ajouter";
+			this->button2->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->button2->UseVisualStyleBackColor = false;
+			// 
 			// Gpersonnel
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -311,6 +328,7 @@ namespace ProjectPOO {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(956, 549);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->radioButton2);
 			this->Controls->Add(this->radioButton1);
