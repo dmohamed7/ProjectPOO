@@ -73,7 +73,7 @@ namespace ProjectPOO {
 			// 
 			// button1
 			// 
-			this->button1->Anchor = System::Windows::Forms::AnchorStyles::Left;
+			this->button1->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->button1->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->button1->BackColor = System::Drawing::Color::Indigo;
 			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
@@ -95,7 +95,7 @@ namespace ProjectPOO {
 			// 
 			// button2
 			// 
-			this->button2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left));
+			this->button2->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->button2->BackColor = System::Drawing::Color::Indigo;
 			this->button2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->button2->FlatAppearance->BorderSize = 0;
@@ -137,7 +137,7 @@ namespace ProjectPOO {
 			// 
 			// button4
 			// 
-			this->button4->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+			this->button4->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->button4->BackColor = System::Drawing::Color::Indigo;
 			this->button4->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->button4->FlatAppearance->BorderSize = 0;
@@ -158,7 +158,7 @@ namespace ProjectPOO {
 			// 
 			// button5
 			// 
-			this->button5->Anchor = System::Windows::Forms::AnchorStyles::Right;
+			this->button5->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
 			this->button5->BackColor = System::Drawing::Color::Indigo;
 			this->button5->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->button5->FlatAppearance->BorderSize = 0;
