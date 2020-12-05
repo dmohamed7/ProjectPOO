@@ -1,7 +1,7 @@
 #pragma once
 #include"SQL.h"
 #include"CArticle.h"
-ref class Gestion_Article:public SQL
+ref class Gestion_Article :public SQL
 {
 public:
     NS_Composants::CArticle^ ar = gcnew NS_Composants::CArticle();
