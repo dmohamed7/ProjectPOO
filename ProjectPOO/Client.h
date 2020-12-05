@@ -5,7 +5,7 @@
 
 namespace NS_Composants
 {
-	
+	using namespace System;
 	ref class Client :public CPersonne
 	{
 	protected:
