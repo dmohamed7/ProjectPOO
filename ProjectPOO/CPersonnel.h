@@ -25,6 +25,8 @@ namespace NS_Composants
 		String^ creer(String^, String^, String^,String^,String^);
 		String^ creer1(String^, String^, String^, String^);
 		String^ afficher1(int a);
+		String^ afficher_tout();
+		String^ modifier(String^ a, String^ b, String^ c, String^ d, String^ e,int id);
 
 
 	};

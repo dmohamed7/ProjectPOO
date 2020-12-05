@@ -61,7 +61,7 @@ namespace NS_Composants
 
 	String^ Client::supprimer1(int a)
 	{
-		return "delete from Adresse WHERE ID_VILLE=" + a + "";
+		return "delete from Adresse WHERE ID_Client=" + a + "";
 	}
 
 	Client::Client()
