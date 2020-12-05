@@ -84,7 +84,7 @@ namespace ProjectPOO {
 			this->button1->ForeColor = System::Drawing::SystemColors::ActiveBorder;
 			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
 			this->button1->ImageAlign = System::Drawing::ContentAlignment::BottomCenter;
-			this->button1->Location = System::Drawing::Point(101, 260);
+			this->button1->Location = System::Drawing::Point(113, 260);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(111, 145);
 			this->button1->TabIndex = 0;
@@ -126,7 +126,7 @@ namespace ProjectPOO {
 			this->button3->ForeColor = System::Drawing::SystemColors::ActiveBorder;
 			this->button3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.Image")));
 			this->button3->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->button3->Location = System::Drawing::Point(462, 376);
+			this->button3->Location = System::Drawing::Point(469, 376);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(111, 136);
 			this->button3->TabIndex = 2;
@@ -147,7 +147,7 @@ namespace ProjectPOO {
 			this->button4->ForeColor = System::Drawing::SystemColors::ActiveBorder;
 			this->button4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button4.Image")));
 			this->button4->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->button4->Location = System::Drawing::Point(698, 345);
+			this->button4->Location = System::Drawing::Point(696, 345);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(106, 139);
 			this->button4->TabIndex = 3;
