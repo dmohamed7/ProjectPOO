@@ -123,9 +123,11 @@
     <ClCompile Include="CArticle.cpp" />
     <ClCompile Include="Ccommande.cpp" />
     <ClCompile Include="Client.cpp" />
+    <ClCompile Include="facture.cpp" />
     <ClCompile Include="GArticle.cpp" />
     <ClCompile Include="Gclient.cpp" />
     <ClCompile Include="Gcommande.cpp" />
+    <ClCompile Include="Gestion_Article.cpp" />
     <ClCompile Include="Gestion_Client.cpp" />
     <ClCompile Include="Gestion_Personnel.cpp" />
     <ClCompile Include="Gpersonnel.cpp" />
@@ -140,6 +142,7 @@
     <ClInclude Include="CArticle.h" />
     <ClInclude Include="Ccommande.h" />
     <ClInclude Include="Client.h" />
+    <ClInclude Include="facture.h" />
     <ClInclude Include="GArticle.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -149,6 +152,7 @@
     <ClInclude Include="Gcommande.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Gestion_Article.h" />
     <ClInclude Include="Gestion_Client.h" />
     <ClInclude Include="Gestion_Personnel.h" />
     <ClInclude Include="Gpersonnel.h">
