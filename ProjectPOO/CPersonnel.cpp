@@ -44,4 +44,12 @@ namespace NS_Composants
 	{
 		return "SELECT * FROM Personnel where ID_Personnel=" + a + "";
 	}
+	String^ CPersonnel::afficher_tout()
+	{
+		return "SELECT* FROM Personnel";
+	}
+	String^ CPersonnel::modifier(String^ a, String^ b, String^ c, String^ d, String^ e ,int id)
+	{
+		return "UPDATE Personnel SET Nom_P = '" + a + "', Prenom_P = '" + b + "', Date_D_embauche = '" + c + "', Add_Personnel = '" + d + "',ID_Personnel_Supervise=(SELECT ID_Personnel FROM Personnel WHERE Nom_P = '" +e+ "') where ID_Personnel = " + id + "";
+	}
 }

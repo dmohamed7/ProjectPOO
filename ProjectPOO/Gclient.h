@@ -126,7 +126,7 @@ namespace ProjectPOO {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(401, 376);
+			this->button2->Location = System::Drawing::Point(277, 376);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(117, 57);
 			this->button2->TabIndex = 1;
@@ -136,7 +136,7 @@ namespace ProjectPOO {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(625, 376);
+			this->button3->Location = System::Drawing::Point(516, 376);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(117, 57);
 			this->button3->TabIndex = 2;
@@ -146,7 +146,7 @@ namespace ProjectPOO {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(764, 376);
+			this->button4->Location = System::Drawing::Point(723, 376);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(117, 57);
 			this->button4->TabIndex = 3;
@@ -376,23 +376,13 @@ namespace ProjectPOO {
 	private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
-	NS_Composants::Client^ cl = gcnew NS_Composants::Client();
-	cl->setNom(textBox1->Text);
-    cl->setPrenom(textBox2->Text);
+	try
+	{
 	String^ date = Convert::ToDateTime(textBox3->Text).ToString("yyyy-MM-dd");
 	String^ date2 = Convert::ToDateTime(textBox4->Text).ToString("yyyy-MM-dd");
-	cl->setDate(date);
-	cl->setDate2(date2);
-	SqlCommand^ com = gcnew SqlCommand(cl->creer(cl->getNom(),cl->getPrenom(),cl->getDate(),cl->getDate2()), con);
-
-	SqlDataReader^ rd;
-	
-	try {
-		con->Open();
-		rd = com->ExecuteReader();
-		con->Close();
-		MessageBox::Show("client enregistree");
+	Gestion_Client gc(textBox1->Text, textBox2->Text, date, date2);
+	gc.Ajouter();
+	MessageBox::Show("client enregistree");
 
 	}
 	catch (Exception^ ex)
@@ -410,31 +400,27 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 		Gestion_Client gc(id);
 		
 		gc.Afficher();
-		SqlDataReader^ rd = gc.getReader();
-		while (rd->Read())
+		while (gc.getReader()->Read())
 		{
-			textBox1->Text = rd->GetString(1);
-			textBox2->Text = rd->GetString(2);
-			textBox3->Text = Convert::ToString(rd->GetDateTime(3));
-			textBox4->Text = Convert::ToString(rd->GetDateTime(4));
+			textBox1->Text = gc.getReader()->GetString(1);
+			textBox2->Text = gc.getReader()->GetString(2);
+			textBox3->Text = Convert::ToString(gc.getReader()->GetDateTime(3));
+			textBox4->Text = Convert::ToString(gc.getReader()->GetDateTime(4));
 
 		}
 		dataGridView1->Hide();
 		dataGridView2->Show();
-		rd->Close();
+		gc.getReader()->Close();
 		
 		gc.afficher1();
-		SqlDataReader^ r = gc.getReader1();
-		DataTable^ dt = gc.getData();
-		
-		while (r->Read())
+		while (gc.getReader1()->Read())
 		{
-			textBox7->Text = r->GetString(1);
-			textBox8->Text = r->GetString(2);
+			textBox7->Text = gc.getReader1()->GetString(1);
+			textBox8->Text = gc.getReader1()->GetString(2);
 
 		}
 		
-		bindingSource2->DataSource = dt;
+		bindingSource2->DataSource = gc.getData();
 		dataGridView2->DataSource = bindingSource2;
 		
 
@@ -449,70 +435,47 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void textBox5_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-	SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
-	NS_Composants::Client^ cl = gcnew NS_Composants::Client();
-	SqlDataAdapter^ sda = gcnew SqlDataAdapter(cl->afficher_tous(), con);
-
-	DataTable^ dt = gcnew DataTable();
+	Gestion_Client gc(textBox1->Text);
+	gc.Afficher_tous();
 	dataGridView2->Hide();
 	dataGridView1->Show();
-	sda->Fill(dt);
-	bindingSource1->DataSource = dt;
+	bindingSource1->DataSource =gc.getData() ;
 	dataGridView1->DataSource = bindingSource1;
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	try {
-		SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
-		NS_Composants::Client^ cl = gcnew NS_Composants::Client();
-		NS_Composants::ville^ vl = gcnew NS_Composants::ville();
-		int id = Int32::Parse(textBox5->Text);
-		cl->setadd_livraison(textBox8->Text);
-		cl->setAdd_facturation(textBox7->Text);
-		cl->setNom(textBox1->Text);
-		cl->setPrenom(textBox2->Text);
-		cl->setID(id);
-		String^ date = Convert::ToDateTime(textBox3->Text).ToString("yyyy-MM-dd");
-		String^ date2 = Convert::ToDateTime(textBox4->Text).ToString("yyyy-MM-dd");
-		cl->setDate(date);
-		cl->setDate2(date2);
-		vl->setvile(textBox6->Text);
-		SqlCommand^ cmd = gcnew SqlCommand(cl->modifier(cl->getNom(), cl->getPrenom(), cl->getDate(), cl->getDate2(), cl->getID()), con);
-		SqlCommand^ cm = gcnew SqlCommand(cl->modifier(cl->getadd_facturation(),cl->getadd_livraison(),vl->getvile(),cl->getID()), con);
-		con->Open();
-		SqlDataReader^ dr = cmd->ExecuteReader();
-		con->Close();
-		con->Open();
-		SqlDataReader^ d = cm->ExecuteReader();
-		con->Close();
-		MessageBox::Show("Modification Reussi");
-		con->Close();
-	}
-	catch (Exception^ ex) {
-		
-	
-		MessageBox::Show(ex->Message);
-	}
+	SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
+	NS_Composants::Client^ cl = gcnew NS_Composants::Client();
+	NS_Composants::ville^ vl = gcnew NS_Composants::ville();
+	int id = Int32::Parse(textBox5->Text);
+	cl->setadd_livraison(textBox8->Text);
+	cl->setAdd_facturation(textBox7->Text);
+	cl->setNom(textBox1->Text);
+	cl->setPrenom(textBox2->Text);
+	cl->setID(id);
+	String^ date = Convert::ToDateTime(textBox3->Text).ToString("yyyy-MM-dd");
+	String^ date2 = Convert::ToDateTime(textBox4->Text).ToString("yyyy-MM-dd");
+	cl->setDate(date);
+	cl->setDate2(date2);
+	vl->setvile(textBox6->Text);
+	SqlCommand^ cmd = gcnew SqlCommand(cl->modifier(cl->getNom(), cl->getPrenom(), cl->getDate(), cl->getDate2(), cl->getID()), con);
+	SqlCommand^ cm = gcnew SqlCommand(cl->modifier(cl->getadd_facturation(), cl->getadd_livraison(), vl->getvile(), cl->getID()), con);
+	con->Open();
+	SqlDataReader^ dr = cmd->ExecuteReader();
+	con->Close();
+	con->Open();
+	SqlDataReader^ d = cm->ExecuteReader();
+	con->Close();
+	MessageBox::Show("Modification Reussi");
+	con->Close();
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 	try {
-			SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
-		NS_Composants::Client^ cl = gcnew NS_Composants::Client();
-		NS_Composants::ville^ vl = gcnew NS_Composants::ville();
 		int ID = Int32::Parse(textBox5->Text);
-		cl->setID(ID);
-		
-		int id = Int32::Parse(textBox5->Text);
-		vl->setID(id);
-		SqlCommand^ cmd = gcnew SqlCommand(cl->supprimer(cl->getID()), con);
-		SqlCommand^ cm = gcnew SqlCommand(cl->supprimer1(cl->getID()), con);
-		con->Open();
-		SqlDataReader^ dr = cmd->ExecuteReader();
-		con->Close();
-		con->Open();
-		SqlDataReader^ drr = cm->ExecuteReader();
-		con->Close();
+		Gestion_Client gc(ID);
+		gc.Supprimer();
 		MessageBox::Show("Client supprimée avec succée");
-		con->Close();
+		
+		
 	}
 	catch (Exception^ ex) {
 
@@ -534,20 +497,9 @@ private: System::Void textBox8_TextChanged(System::Object^ sender, System::Event
 private: System::Void textBox7_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-	SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
-	NS_Composants::Client^ cl = gcnew NS_Composants::Client();
-	NS_Composants::ville^ vl = gcnew NS_Composants::ville();
-	cl->setNom(textBox1->Text);
-	vl->setvile(textBox6->Text);
-	cl->setadd_livraison(textBox8->Text);
-	cl->setAdd_facturation(textBox7->Text);
-	SqlCommand^ com = gcnew SqlCommand(cl->creer1(cl->getadd_facturation(),cl->getadd_livraison(),cl->getNom(),vl->getvile()), con);
-	SqlDataReader^ g;
-	try {
-		
-		con->Open();
-		g = com->ExecuteReader();
-		con->Close();
+	try{
+	Gestion_Client gc(textBox1->Text,textBox2->Text,textBox7->Text, textBox8->Text, textBox6->Text);
+	gc.ajouter1();
 		MessageBox::Show("client enregistree");
 
 	}

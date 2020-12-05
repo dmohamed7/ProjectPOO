@@ -1,6 +1,5 @@
 #pragma once
-#include "CPersonnel.h"
-#include "CPersonne.h"
+#include"Gestion_Personnel.h"
 using namespace System::Data::SqlClient;
 namespace ProjectPOO {
 
@@ -77,6 +76,8 @@ namespace ProjectPOO {
 
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::TextBox^ textBox7;
+	private: System::Windows::Forms::Label^ label7;
 	private: System::ComponentModel::IContainer^ components;
 
 
@@ -124,6 +125,8 @@ namespace ProjectPOO {
 			this->radioButton2 = (gcnew System::Windows::Forms::RadioButton());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			this->label7 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
@@ -147,7 +150,7 @@ namespace ProjectPOO {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(28, 158);
+			this->label1->Location = System::Drawing::Point(39, 161);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(63, 25);
 			this->label1->TabIndex = 1;
@@ -176,7 +179,7 @@ namespace ProjectPOO {
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(182, 161);
+			this->textBox2->Location = System::Drawing::Point(182, 177);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(155, 22);
 			this->textBox2->TabIndex = 4;
@@ -283,7 +286,7 @@ namespace ProjectPOO {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(3, 111);
+			this->label5->Location = System::Drawing::Point(3, 96);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(162, 25);
 			this->label5->TabIndex = 15;
@@ -292,7 +295,7 @@ namespace ProjectPOO {
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(182, 114);
+			this->textBox6->Location = System::Drawing::Point(182, 96);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(155, 22);
 			this->textBox6->TabIndex = 16;
@@ -364,6 +367,25 @@ namespace ProjectPOO {
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &Gpersonnel::button2_Click);
 			// 
+			// textBox7
+			// 
+			this->textBox7->Location = System::Drawing::Point(182, 133);
+			this->textBox7->Name = L"textBox7";
+			this->textBox7->Size = System::Drawing::Size(155, 22);
+			this->textBox7->TabIndex = 24;
+			this->textBox7->UseWaitCursor = true;
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label7->Location = System::Drawing::Point(12, 129);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(142, 25);
+			this->label7->TabIndex = 25;
+			this->label7->Text = L"ID_encadreur";
+			// 
 			// Gpersonnel
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -371,6 +393,8 @@ namespace ProjectPOO {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->ClientSize = System::Drawing::Size(988, 549);
+			this->Controls->Add(this->label7);
+			this->Controls->Add(this->textBox7);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->textBox2);
@@ -414,21 +438,10 @@ namespace ProjectPOO {
 private: System::Void Gpersonnel_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void Ajouter_Click(System::Object^ sender, System::EventArgs^ e) {
-	NS_Composants::CPersonnel^ cP = gcnew NS_Composants::CPersonnel();
-	cP->setNom(textBox2->Text);
-	cP->setPrenom(textBox3->Text);
-	cP->setAdresse(textBox4->Text);
-	cP->setNomp(textBox6->Text);
+try {
 	String^ date = Convert::ToDateTime(textBox5->Text).ToString("yyyy-MM-dd");
-	cP->setDate(date);
-	String^ constring = "Data Source=(local);Initial Catalog=poo;Integrated Security=True";
-	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
-	SqlCommand^ cmdDataBase = gcnew SqlCommand(cP->creer(cP->getNom(),cP->getPrenom(),cP->getDate(),cP->getAdresse(),cP->Getnomp()), conDataBase);
-	SqlDataReader^ myReader;
-	try {
-
-		conDataBase->Open();
-		myReader = cmdDataBase->ExecuteReader();
+	Gestion_Personnel pr(textBox2->Text, textBox3->Text, textBox4->Text, date, textBox6->Text);
+	pr.ajouterP();
 		MessageBox::Show("personnel enregistré ");
 	}
 	catch (Exception^ ex) {
@@ -439,14 +452,9 @@ private: System::Void Ajouter_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void Supprimer_Click(System::Object^ sender, System::EventArgs^ e) {
 	try {
-		SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
-		NS_Composants::CPersonnel^ pr = gcnew NS_Composants::CPersonnel();
 		int ID = Int32::Parse(textBox1->Text);
-		pr->setID(ID);
-		SqlCommand^ cmd = gcnew SqlCommand(pr->supprimer(pr->getID()), con);
-		con->Open();
-		SqlDataReader^ dr = cmd->ExecuteReader();
-		con->Close();
+		Gestion_Personnel pr(ID);
+		pr.Supprimer();
 		MessageBox::Show("personnel supprimée avec succée");
 		
 	}
@@ -457,46 +465,62 @@ private: System::Void Supprimer_Click(System::Object^ sender, System::EventArgs^
 	}
 }
 private: System::Void Afficher_Click(System::Object^ sender, System::EventArgs^ e) {
-	NS_Composants::CPersonnel^ pr = gcnew NS_Composants::CPersonnel();
-	SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
+	
 	int id = Int32::Parse(textBox1->Text);
-	pr->setID(id);
-	SqlCommand^ comm = gcnew SqlCommand(pr->afficher1(pr->getID()), con);
-	con->Open();
-	SqlDataReader^ rd = comm->ExecuteReader();
+	Gestion_Personnel pr(id);
+	pr.Afficher();
+	
+	while (pr.getReader()->Read())
+	{
+		textBox2->Text = pr.getReader()->GetString(1);
+		textBox3->Text = pr.getReader()->GetString(2);
+		textBox5->Text = Convert::ToString(pr.getReader()->GetDateTime(3));
+		textBox4->Text = pr.getReader()->GetString(4);
+		if (pr.getReader()->IsDBNull(5)) {
+			textBox6->Text = "pas de encadreur";
+		}
+		else {
+
+			textBox7->Text = Convert::ToString(pr.getReader()->GetInt32(5));
+		}
+	}
 	dataGridView1->Hide();
 	dataGridView2->Show();
-	while (rd->Read())
-	{
-		textBox2->Text = rd->GetString(1);
-		textBox3->Text = rd->GetString(2);
-		textBox4->Text = Convert::ToString(rd->GetDateTime(3));
-		textBox5->Text = rd->GetString(4);
-		textBox6->Text = Convert::ToString(rd->GetInt32(5));
-	}
-	con->Close();
-	SqlDataAdapter^ da = gcnew SqlDataAdapter(pr->afficher1(pr->getID()), con);
-	DataTable^ dt = gcnew DataTable();
-	dt->Clear();
-	da->Fill(dt);
-	bindingSource2->DataSource = dt;
+	
+	bindingSource2->DataSource = pr.getData();
 	dataGridView2->DataSource = bindingSource2;
-
+	pr.getReader()->Close();
 
 
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
-	SqlDataAdapter^ sda = gcnew SqlDataAdapter("SELECT * FROM Personnel", con);
-	DataTable^ dt = gcnew DataTable();
+	Gestion_Personnel pr(textBox2->Text, textBox3->Text);
+	pr.Afficher_tous();
 	dataGridView2->Hide();
 	dataGridView1->Show();
-	sda->Fill(dt);
-	bindingSource1->DataSource = dt;
+	
+	bindingSource1->DataSource = pr.getData();
 	dataGridView1->DataSource = bindingSource1;
 }
 
 private: System::Void Modifier_Click(System::Object^ sender, System::EventArgs^ e) {
+	try {
+
+		String^ date = Convert::ToDateTime(textBox5->Text).ToString("yyyy-MM-dd");
+		int id = Int32::Parse(textBox1->Text);
+		Gestion_Personnel pr(textBox2->Text, textBox3->Text, textBox4->Text, date, textBox6->Text,id);
+		
+		pr.Modifier();
+		MessageBox::Show("personnel modifier ");
+	}
+	catch (Exception^ ex) {
+
+		MessageBox::Show(ex->Message);
+
+	}
+
+	
+
 
 }
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -518,11 +542,14 @@ private: System::Void radioButton1_CheckedChanged(System::Object^ sender, System
 	textBox6->Show();
 	button2->Hide();
 	Ajouter->Show();
+	textBox7->Show();
+	label7->Show();
 }
 
 private: System::Void radioButton2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-	
+	textBox7->Hide();
 	label5->Hide();
+	label7->Hide();
 	textBox6->Hide();
 	Ajouter->Hide();
 	button2->Show();
@@ -544,21 +571,10 @@ private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	NS_Composants::CPersonnel^ cP = gcnew NS_Composants::CPersonnel();
-	cP->setNom(textBox2->Text);
-	cP->setPrenom(textBox3->Text);
-	cP->setAdresse(textBox4->Text);
-	
-	String^ date = Convert::ToDateTime(textBox5->Text).ToString("yyyy-MM-dd");
-	cP->setDate(date);
-	String^ constring = "Data Source=(local);Initial Catalog=poo;Integrated Security=True";
-	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
-	SqlCommand^ cmdDataBase = gcnew SqlCommand(cP->creer1(cP->getNom(), cP->getPrenom(), cP->getDate(), cP->getAdresse()), conDataBase);
-	SqlDataReader^ myReader;
 	try {
-
-		conDataBase->Open();
-		myReader = cmdDataBase->ExecuteReader();
+	String^ date = Convert::ToDateTime(textBox5->Text).ToString("yyyy-MM-dd");
+	Gestion_Personnel pr(textBox2->Text,textBox3->Text,textBox4->Text,date,textBox6->Text);
+	pr.Ajouter();
 		MessageBox::Show("encadreur enregistré ");
 	}
 	catch (Exception^ ex) {

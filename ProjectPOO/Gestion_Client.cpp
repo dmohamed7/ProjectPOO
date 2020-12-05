@@ -1,15 +1,33 @@
 #include "Gestion_Client.h"
 
-Gestion_Client::Gestion_Client(String^ Nom, String^ Prenom, String^ Adresse, String^ adresse, String^ date, String^ date2, String^ ville1, int id, int ID)
+Gestion_Client::Gestion_Client(String^ Nom, String^ Prenom, String^ date, String^ date2)
 {
     cl.setNom(Nom);
-    cl.setID(ID);
     cl.setPrenom(Prenom);
     cl.setDate(date);
+    cl.setDate(date2);
+   
+    
+}
+Gestion_Client::Gestion_Client(String^ Nom, String^ Prenom, String^ date, String^ date2, String^ Adresse, String^ adresse, String^ ville1, int id)
+{
+    cl.setNom(Nom);
+    cl.setPrenom(Prenom);
+    cl.setDate(date);
+    cl.setDate(date2);
     cl.setAdd_facturation(Adresse);
     cl.setadd_livraison(adresse);
     vl.setvile(ville1);
-    vl.setID(id);
+    cl.setID(id);
+}
+Gestion_Client::Gestion_Client(String^ Nom,String^ prenom, String^ Adresse, String^ adresse,  String^ ville1)
+{
+    cl.setNom(Nom);
+    cl.setPrenom(prenom);
+    cl.setAdd_facturation(Adresse);
+    cl.setadd_livraison(adresse);
+    vl.setvile(ville1);
+    
 }
 
 Gestion_Client::Gestion_Client(int id)
@@ -17,13 +35,13 @@ Gestion_Client::Gestion_Client(int id)
     cl.setID(id);
 }
 
-Gestion_Client::Gestion_Client(String^ Nom, String^ Prenom, String^ date, String^ date2)
+Gestion_Client::Gestion_Client(String^a)
 {
-    cl.setNom(Nom);
-    cl.setPrenom(Prenom);
-    cl.setDate(date);
-    cl.setDate2(date2);
+    cl.setNom(a);
+   
 }
+
+
 
 void Gestion_Client::Afficher()
 {
@@ -32,7 +50,6 @@ void Gestion_Client::Afficher()
     setAdapter(gcnew SqlDataAdapter(cl.afficher(cl.getID()), getConDataBase()));
     setCmdDataBase(gcnew SqlCommand(cl.afficher(cl.getID()), getConDataBase()));
     setData(gcnew DataTable());
-   
     getAdapter()->Fill(getData());
     SqlCommand^ comm = getCmdDataBase();
     getConDataBase()->Open();
@@ -74,18 +91,18 @@ void Gestion_Client::Modifier()
     getConDataBase()->Open();
     setReader(this->getCmdDataBase()->ExecuteReader());
     getConDataBase()->Close();
-    getConDataBase()->Open();
-    setReader1(this->getCmdDataBasee()->ExecuteReader());
-    getConDataBase()->Close();
+   
 }
 
 void Gestion_Client::ajouter1()
 {
     setConstring("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
     setConDataBase(gcnew SqlConnection(getConstring()));
-    setCmdDataBase(gcnew SqlCommand(cl.creer1(cl.getadd_facturation(), cl.getadd_livraison(), cl.getNom(), vl.getvile()), getConDataBase()));
+    setCmdDataBasee(gcnew SqlCommand(cl.creer1(cl.getadd_facturation(), cl.getadd_livraison(), cl.getNom(), vl.getvile()), getConDataBase()));
     getConDataBase()->Open();
-    setReader1(this->getCmdDataBase()->ExecuteReader());
+    setReader1(this->getCmdDataBasee()->ExecuteReader());
+   
+   
 }
 
 
@@ -94,10 +111,22 @@ void Gestion_Client::Supprimer()
 {
     setConstring("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
     setConDataBase(gcnew SqlConnection(getConstring()));
+    setCmdDataBasee(gcnew SqlCommand(cl.supprimer1(cl.getID()), getConDataBase()));
     setCmdDataBase(gcnew SqlCommand(cl.supprimer(cl.getID()), getConDataBase()));
+    getConDataBase()->Open();
+    setReader1(this->getCmdDataBasee()->ExecuteReader());
+    getConDataBase()->Close();
     getConDataBase()->Open();
     setReader(this->getCmdDataBase()->ExecuteReader());
     getConDataBase()->Close();
+}
+
+void Gestion_Client::modifier1()
+{
+
+    setConstring("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
+    setConDataBase(gcnew SqlConnection(getConstring()));
+    setCmdDataBasee(gcnew SqlCommand(cl.modifier(cl.getadd_facturation(), cl.getadd_livraison(), vl.getvile(),cl.getID())));
     getConDataBase()->Open();
     setReader1(this->getCmdDataBasee()->ExecuteReader());
     getConDataBase()->Close();
