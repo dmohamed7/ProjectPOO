@@ -117,4 +117,8 @@ namespace NS_Composants
     {
         return "SELECT * FROM Article where ID_Article=" + a + "";
     }
+    String^ CArticle::afficher_tout(int a)
+    {
+        return " SELECT * FROM Article";
+    }
 }

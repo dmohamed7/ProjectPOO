@@ -1,5 +1,5 @@
 #pragma once
-#include"CArticle.h"
+#include"Gestion_Article.h"
 using namespace System::Data::SqlClient;
 namespace ProjectPOO {
 
@@ -359,25 +359,13 @@ namespace ProjectPOO {
 private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
-	NS_Composants::CArticle^ ca = gcnew NS_Composants::CArticle();
-	ca->setNom_article(textBox2->Text);
-	double prix = double::Parse(textBox8->Text);
-	ca->setPrix_uht(prix);
-	ca->setRef_article(textBox1->Text);
-	ca->setCouleur(textBox3->Text);
-	int montant_tva = int::Parse(textBox4->Text);
-	ca->setTVA(montant_tva);
-	int quantité = int::Parse(textBox5->Text);
-	ca->setQuantité(quantité);
-	int seuil = int::Parse(textBox6->Text);
-	ca->setseuil(seuil);
-	SqlCommand^ com = gcnew SqlCommand(ca->ajouter(ca->getRef_article(),ca->getNom_article(),ca->getCouleur(),ca->getPrix_uht(),ca->getTVA(),ca->getQuantité(),ca->getseuil()), con);
-
-	SqlDataReader^ rd;
 	try {
-		con->Open();
-		rd = com->ExecuteReader();
+	double prix = double::Parse(textBox8->Text);
+	int montant_tva = int::Parse(textBox4->Text);
+	int quantité = int::Parse(textBox5->Text);
+	int seuil = int::Parse(textBox6->Text);
+	Gestion_Article ar(textBox1->Text, textBox2->Text, textBox3->Text, prix, montant_tva, quantité, seuil);
+	ar.Ajouter();
 		MessageBox::Show("article enregistrer");
 
 	}
@@ -409,20 +397,13 @@ private: System::Void textBox7_TextChanged(System::Object^ sender, System::Event
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	try {
 		SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
-	NS_Composants::CArticle^ ar = gcnew NS_Composants::CArticle();
-	ar->setNom_article(textBox2->Text);
-	int id = Int32::Parse(textBox7->Text);
-	ar->setID(id);
+	
+	int id = Int32::Parse(textBox7->Text);;
 	double prix = double::Parse(textBox8->Text);
-	ar->setPrix_uht(prix);
-	ar->setRef_article(textBox1->Text);
-	ar->setCouleur(textBox3->Text);
 	int montant_tva = int::Parse(textBox4->Text);
-	ar->setTVA(montant_tva);
 	int quantité = int::Parse(textBox5->Text);
-	ar->setQuantité(quantité);
 	int seuil = int::Parse(textBox6->Text);
-	ar->setseuil(seuil);
+	Gestion_Article ar(textBox1->Text, textBox2->Text, textBox3->Text, prix, montant_tva, quantité, seuil,id);
 	SqlCommand^ com = gcnew SqlCommand(ar->modifier(ar->getRef_article(), ar->getNom_article(), ar->getCouleur(),ar->getPrix_uht() ,ar->getTVA(), ar->getQuantité(), ar->getseuil(),ar->getID()), con);
 
 	SqlDataReader^ rd;

@@ -40,5 +40,6 @@ namespace NS_Composants
 		String^ modifier(String^ a, String^ b, String^ c,double g, int d, int e, int f, int id);
 		String^ supprimer(int d);
 		String^ afficher(int a);
+		String^ afficher_tout(int a);
 	};
 }
