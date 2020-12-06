@@ -143,9 +143,9 @@ namespace ProjectPOO {
 			this->textBox17 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox14 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox16 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox19 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox20 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox21 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox19 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox18 = (gcnew System::Windows::Forms::TextBox());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->label11 = (gcnew System::Windows::Forms::Label());
@@ -186,7 +186,7 @@ namespace ProjectPOO {
 			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.Image")));
 			this->button2->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->button2->Location = System::Drawing::Point(843, 383);
+			this->button2->Location = System::Drawing::Point(818, 297);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(86, 74);
 			this->button2->TabIndex = 1;
@@ -201,7 +201,7 @@ namespace ProjectPOO {
 			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button3.Image")));
 			this->button3->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->button3->Location = System::Drawing::Point(951, 383);
+			this->button3->Location = System::Drawing::Point(939, 297);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(86, 74);
 			this->button3->TabIndex = 2;
@@ -216,7 +216,7 @@ namespace ProjectPOO {
 			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button4.Image")));
 			this->button4->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->button4->Location = System::Drawing::Point(951, 280);
+			this->button4->Location = System::Drawing::Point(618, 124);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(86, 75);
 			this->button4->TabIndex = 3;
@@ -228,6 +228,8 @@ namespace ProjectPOO {
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
+			this->label1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label1->Location = System::Drawing::Point(25, 127);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(74, 17);
@@ -236,17 +238,20 @@ namespace ProjectPOO {
 			// 
 			// dataGridView2
 			// 
+			this->dataGridView2->BackgroundColor = System::Drawing::Color::White;
 			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView2->Location = System::Drawing::Point(743, 60);
+			this->dataGridView2->Location = System::Drawing::Point(724, 36);
 			this->dataGridView2->Name = L"dataGridView2";
 			this->dataGridView2->RowHeadersWidth = 51;
 			this->dataGridView2->RowTemplate->Height = 24;
-			this->dataGridView2->Size = System::Drawing::Size(294, 203);
+			this->dataGridView2->Size = System::Drawing::Size(313, 255);
 			this->dataGridView2->TabIndex = 22;
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
+			this->label3->BackColor = System::Drawing::Color::Transparent;
+			this->label3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label3->Location = System::Drawing::Point(12, 201);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(85, 17);
@@ -256,6 +261,8 @@ namespace ProjectPOO {
 			// label4
 			// 
 			this->label4->AutoSize = true;
+			this->label4->BackColor = System::Drawing::Color::Transparent;
+			this->label4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label4->Location = System::Drawing::Point(2, 246);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(98, 17);
@@ -293,6 +300,8 @@ namespace ProjectPOO {
 			// label5
 			// 
 			this->label5->AutoSize = true;
+			this->label5->BackColor = System::Drawing::Color::Transparent;
+			this->label5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label5->Location = System::Drawing::Point(11, 283);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(88, 17);
@@ -302,6 +311,8 @@ namespace ProjectPOO {
 			// label6
 			// 
 			this->label6->AutoSize = true;
+			this->label6->BackColor = System::Drawing::Color::Transparent;
+			this->label6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label6->Location = System::Drawing::Point(2, 320);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(110, 17);
@@ -311,6 +322,8 @@ namespace ProjectPOO {
 			// label7
 			// 
 			this->label7->AutoSize = true;
+			this->label7->BackColor = System::Drawing::Color::Transparent;
+			this->label7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label7->Location = System::Drawing::Point(-3, 162);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(114, 17);
@@ -358,6 +371,8 @@ namespace ProjectPOO {
 			// label8
 			// 
 			this->label8->AutoSize = true;
+			this->label8->BackColor = System::Drawing::Color::Transparent;
+			this->label8->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label8->Location = System::Drawing::Point(38, 440);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(47, 17);
@@ -381,6 +396,8 @@ namespace ProjectPOO {
 			// label9
 			// 
 			this->label9->AutoSize = true;
+			this->label9->BackColor = System::Drawing::Color::Transparent;
+			this->label9->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label9->Location = System::Drawing::Point(13, 479);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(87, 17);
@@ -394,9 +411,9 @@ namespace ProjectPOO {
 			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button6.Image")));
 			this->button6->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->button6->Location = System::Drawing::Point(780, 280);
+			this->button6->Location = System::Drawing::Point(607, 54);
 			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(119, 75);
+			this->button6->Size = System::Drawing::Size(111, 73);
 			this->button6->TabIndex = 41;
 			this->button6->Text = L"Afficher_article";
 			this->button6->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
@@ -404,12 +421,13 @@ namespace ProjectPOO {
 			// 
 			// dataGridView1
 			// 
+			this->dataGridView1->BackgroundColor = System::Drawing::Color::White;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(743, 60);
+			this->dataGridView1->Location = System::Drawing::Point(724, 36);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(294, 203);
+			this->dataGridView1->Size = System::Drawing::Size(313, 255);
 			this->dataGridView1->TabIndex = 42;
 			// 
 			// textBox10
@@ -446,6 +464,7 @@ namespace ProjectPOO {
 			// 
 			// groupBox1
 			// 
+			this->groupBox1->BackColor = System::Drawing::Color::Transparent;
 			this->groupBox1->Controls->Add(this->textBox15);
 			this->groupBox1->Controls->Add(this->textBox17);
 			this->groupBox1->Controls->Add(this->textBox10);
@@ -497,14 +516,6 @@ namespace ProjectPOO {
 			this->textBox16->Size = System::Drawing::Size(132, 22);
 			this->textBox16->TabIndex = 76;
 			// 
-			// textBox19
-			// 
-			this->textBox19->Location = System::Drawing::Point(128, 364);
-			this->textBox19->Margin = System::Windows::Forms::Padding(4);
-			this->textBox19->Name = L"textBox19";
-			this->textBox19->Size = System::Drawing::Size(109, 22);
-			this->textBox19->TabIndex = 21;
-			// 
 			// textBox20
 			// 
 			this->textBox20->Location = System::Drawing::Point(120, 23);
@@ -521,6 +532,14 @@ namespace ProjectPOO {
 			this->textBox21->Size = System::Drawing::Size(44, 22);
 			this->textBox21->TabIndex = 23;
 			// 
+			// textBox19
+			// 
+			this->textBox19->Location = System::Drawing::Point(128, 364);
+			this->textBox19->Margin = System::Windows::Forms::Padding(4);
+			this->textBox19->Name = L"textBox19";
+			this->textBox19->Size = System::Drawing::Size(109, 22);
+			this->textBox19->TabIndex = 21;
+			// 
 			// textBox18
 			// 
 			this->textBox18->Location = System::Drawing::Point(128, 93);
@@ -532,6 +551,8 @@ namespace ProjectPOO {
 			// label10
 			// 
 			this->label10->AutoSize = true;
+			this->label10->BackColor = System::Drawing::Color::Transparent;
+			this->label10->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label10->Location = System::Drawing::Point(25, 93);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(64, 17);
@@ -542,6 +563,8 @@ namespace ProjectPOO {
 			// label11
 			// 
 			this->label11->AutoSize = true;
+			this->label11->BackColor = System::Drawing::Color::Transparent;
+			this->label11->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label11->Location = System::Drawing::Point(12, 64);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(99, 17);
@@ -558,7 +581,7 @@ namespace ProjectPOO {
 			this->button7->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->button7->Location = System::Drawing::Point(239, 347);
 			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(86, 75);
+			this->button7->Size = System::Drawing::Size(52, 78);
 			this->button7->TabIndex = 78;
 			this->button7->Text = L"payer";
 			this->button7->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
@@ -575,6 +598,7 @@ namespace ProjectPOO {
 			// label2
 			// 
 			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::Transparent;
 			this->label2->Location = System::Drawing::Point(280, 482);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(88, 17);
@@ -591,6 +615,7 @@ namespace ProjectPOO {
 			// label12
 			// 
 			this->label12->AutoSize = true;
+			this->label12->BackColor = System::Drawing::Color::Transparent;
 			this->label12->Location = System::Drawing::Point(291, 440);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(89, 17);
@@ -600,6 +625,8 @@ namespace ProjectPOO {
 			// label13
 			// 
 			this->label13->AutoSize = true;
+			this->label13->BackColor = System::Drawing::Color::Transparent;
+			this->label13->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->label13->Location = System::Drawing::Point(20, 367);
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(65, 17);
