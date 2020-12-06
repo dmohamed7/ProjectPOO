@@ -8,8 +8,8 @@ Service::SVC_Gstat::SVC_Gstat()
 float Service::SVC_Gstat::calculpaniermoyen()
 {
     float chiffreaffaire;
-    int nbcommande = this->cad->actionrowsID("Select count(id_commande) from commande");
-    DataTable^ t = this->cad->getRows("select sum((prix_ht +(prix_ht*(tva-remise)/100))*quantite_article) from ligne_commande");
+    int nbcommande = this->cad->actionrowsID("Select count(id_facture) from facture");
+    DataTable^ t = this->cad->getRows("select sum(Montant_Total_TTC) from Facture");
     if (t->Rows[0]->ItemArray[0]->ToString() != "") {
         chiffreaffaire = float::Parse(t->Rows[0]->ItemArray[0]->ToString());
     }
@@ -21,9 +21,7 @@ float Service::SVC_Gstat::calculpaniermoyen()
 
 float Service::SVC_Gstat::calculchiffreaffaire(DateTime^ debut, DateTime^ fin)
 {
-    DataTable^ d = this->cad->getRows("select sum((prix_ht +(prix_ht*(tva-remise)/100))*quantite_article) from " +
-        "(select remise,quantite_article,prix_ht,tva,date_emission from ligne_commande left join [dbo].[Commande] on commande.id_commande = ligne_commande.id_commande where date_emission > convert(date,'" +
-        debut->Day + "/" + debut->Month + "/" + debut->Year + "',103) and date_emission < convert(date,'" + fin->Day + "/" + fin->Month + "/" + fin->Year + "',103)) as tbl");
+    DataTable^ d = this->cad->getRows("(SELECT sum (Montant_total_TTC)FROM Facture where Date_Facturation >convert(date,'" + debut->ToString()+ "',103) and Date_Facturation<convert(date,'" +fin->ToString()+ "',103))");
     float chiffreafaire;
     if (d->Rows[0]->ItemArray[0]->ToString() != "") {
         chiffreafaire = float::Parse(d->Rows[0]->ItemArray[0]->ToString());
@@ -42,7 +40,7 @@ System::Data::DataTable^ Service::SVC_Gstat::produitsousseuil()
 
 float Service::SVC_Gstat::calcultotalachatclient(int id)
 {
-    DataTable^ d = this->cad->getRows("select sum((prix_ht +(prix_ht*(tva-remise)/100))*quantite_article) from ligne_commande left join commande on commande.id_commande = ligne_commande.id_commande where id_client = " + id);
+    DataTable^ d = this->cad->getRows("select sum(montant_total_ttc) from facture where id_client = " + id);
     float montant;
     if (d->Rows[0]->ItemArray[0]->ToString() != "") {
         montant = float::Parse(d->Rows[0]->ItemArray[0]->ToString());
@@ -55,14 +53,14 @@ float Service::SVC_Gstat::calcultotalachatclient(int id)
 
 System::Data::DataTable^ Service::SVC_Gstat::topvendu()
 {
-    DataTable^ t = this->cad->getRows("select top 10 sum(quantite_article) as total,(select designation from article where article.id_article = ligne_commande.id_article) as article from ligne_commande GROUP BY id_article ORDER BY total DESC");
+    DataTable^ t = this->cad->getRows("SELECT top 10 sum(Quantite_art_cmd)as total,(SELECT designation from Article where Article.ID_Article = Ligne_Commande.ID_Article) as designation from Ligne_Commande group by ID_ArticlE order by total desc ");
 
     return t;
 }
 
 System::Data::DataTable^ Service::SVC_Gstat::flopvendu()
 {
-    DataTable^ t = this->cad->getRows("select top 10 sum(quantite_article) as total,(select designation from article where article.id_article = ligne_commande.id_article) as article from ligne_commande GROUP BY id_article ORDER BY total ASC");
+    DataTable^ t = this->cad->getRows("SELECT top 10 sum(Quantite_art_cmd)as total,(SELECT designation from Article where Article.ID_Article = Ligne_Commande.ID_Article) as designation from Ligne_Commande group by ID_ArticlE order by total ASC");
 
     return t;
 }

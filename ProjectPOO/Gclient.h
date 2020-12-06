@@ -275,11 +275,11 @@ namespace ProjectPOO {
 			// 
 			this->dataGridView1->BackgroundColor = System::Drawing::Color::White;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(714, 44);
+			this->dataGridView1->Location = System::Drawing::Point(622, 44);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(190, 465);
+			this->dataGridView1->Size = System::Drawing::Size(362, 465);
 			this->dataGridView1->TabIndex = 14;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Gclient::dataGridView1_CellContentClick);
 			// 
@@ -287,11 +287,11 @@ namespace ProjectPOO {
 			// 
 			this->dataGridView2->BackgroundColor = System::Drawing::Color::White;
 			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView2->Location = System::Drawing::Point(714, 44);
+			this->dataGridView2->Location = System::Drawing::Point(622, 46);
 			this->dataGridView2->Name = L"dataGridView2";
 			this->dataGridView2->RowHeadersWidth = 51;
 			this->dataGridView2->RowTemplate->Height = 24;
-			this->dataGridView2->Size = System::Drawing::Size(190, 465);
+			this->dataGridView2->Size = System::Drawing::Size(362, 465);
 			this->dataGridView2->TabIndex = 15;
 			this->dataGridView2->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Gclient::dataGridView2_CellContentClick);
 			// 
@@ -387,7 +387,7 @@ namespace ProjectPOO {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(904, 509);
+			this->ClientSize = System::Drawing::Size(996, 509);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->textBox8);
 			this->Controls->Add(this->label8);

@@ -170,7 +170,7 @@ namespace ProjectPOO {
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button1.Image")));
 			this->button1->ImageAlign = System::Drawing::ContentAlignment::TopCenter;
-			this->button1->Location = System::Drawing::Point(245, 78);
+			this->button1->Location = System::Drawing::Point(262, 93);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(86, 75);
 			this->button1->TabIndex = 0;
