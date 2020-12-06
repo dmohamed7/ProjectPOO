@@ -815,8 +815,8 @@ private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e
 	String^ prenomclient = textBox9->Text;
 	int id = Int32::Parse(textBox18->Text);
 	String^ ref = textBox11->Text;
-	System::Windows::Forms::MessageBox::Show("INSERT into Paiement(Date_Paiement,Date_ReglementSolde,Moyen_Paiement,ID_Client,Reference) values('" + datep + "' ,'" + date2 + "','" + moyP + "','" + id + "','" + ref + "');");
-	SqlCommand^ cmdDataBase = gcnew SqlCommand("INSERT into Paiement(Date_Paiement,Date_ReglementSolde,Moyen_Paiement,ID_Commande) values('" + datep + "' ,'" + date2 + "','" + moyP + "','" + id + "',(SELECT ID_Commande FROM Commande where Reference ='" + ref +"');", condatabase);
+	System::Windows::Forms::MessageBox::Show("INSERT into Paiement(Date_Paiement,Date_ReglementSolde,Moyen_Paiement,ID_Commande) values('" + datep + "' ,'" + date2 + "','" + moyP + "','" + id + "',(SELECT ID_Commande FROM Commande where Reference ='" + ref + "'));");
+	SqlCommand^ cmdDataBase = gcnew SqlCommand("INSERT into Paiement(Date_Paiement,Date_ReglementSolde,Moyen_Paiement,ID_Commande) values('" + datep + "' ,'" + date2 + "','" + moyP + "','" + id + "',(SELECT ID_Commande FROM Commande where Reference ='" + ref +"'));",condatabase);
 	SqlDataReader^ myReader;
 	try {
 		condatabase->Open();
