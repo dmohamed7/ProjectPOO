@@ -233,6 +233,7 @@ namespace ProjectPOO {
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(100, 22);
 			this->textBox4->TabIndex = 13;
+			this->textBox4->TextChanged += gcnew System::EventHandler(this, &GArticle::textBox4_TextChanged);
 			// 
 			// textBox5
 			// 
@@ -376,15 +377,10 @@ namespace ProjectPOO {
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
-			SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
-			NS_Composants::CArticle^ ar = gcnew NS_Composants::CArticle();
 			int ID = Int32::Parse(textBox7->Text);
-			ar->setID(ID);
-			SqlCommand^ cmd = gcnew SqlCommand(ar->supprimer(ar->getID()), con);
-			con->Open();
-			SqlDataReader^ dr = cmd->ExecuteReader();
+			Gestion_Article ar(ID);
+			ar.Supprimer();
 			MessageBox::Show("article supprimée avec succée");
-			con->Close();
 		}
 		catch (Exception^ ex) {
 
@@ -396,20 +392,13 @@ namespace ProjectPOO {
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
-			SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
-
 			int id = Int32::Parse(textBox7->Text);;
 			double prix = double::Parse(textBox8->Text);
 			int montant_tva = int::Parse(textBox4->Text);
 			int quantité = int::Parse(textBox5->Text);
 			int seuil = int::Parse(textBox6->Text);
 			Gestion_Article ar(textBox1->Text, textBox2->Text, textBox3->Text, prix, montant_tva, quantité, seuil, id);
-			//SqlCommand^ com = gcnew SqlCommand(ar->modifier(ar->getRef_article(), ar->getNom_article(), ar->getCouleur(), ar->getPrix_uht(), ar->getTVA(), ar->getQuantité(), ar->getseuil(), ar->getID()), con);
-
-			//SqlDataReader^ rd;
-
-			con->Open();
-			//rd = com->ExecuteReader();
+			ar.Modifier();
 			MessageBox::Show("article modifier");
 
 		}
@@ -421,45 +410,37 @@ namespace ProjectPOO {
 	private: System::Void textBox8_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-		NS_Composants::CArticle^ ar = gcnew NS_Composants::CArticle();
-		SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
+		
 		int id = Int32::Parse(textBox7->Text);
-		ar->setID(id);
-		SqlCommand^ comm = gcnew SqlCommand(ar->afficher(ar->getID()), con);
-		con->Open();
-		SqlDataReader^ rd = comm->ExecuteReader();
+		Gestion_Article ar(id);
+		ar.Afficher();
 		dataGridView1->Hide();
 		dataGridView2->Show();
-		while (rd->Read())
+		while (ar.getReader()->Read())
 		{
-			textBox1->Text = rd->GetString(1);
-			textBox2->Text = rd->GetString(2);
-			textBox3->Text = rd->GetString(3);
-			textBox4->Text = Convert::ToString(rd->GetInt32(7));
-			textBox5->Text = Convert::ToString(rd->GetInt32(5));
-			textBox6->Text = Convert::ToString(rd->GetInt32(6));
-			textBox8->Text = Convert::ToString(rd->GetDouble(4));
+			textBox1->Text = ar.getReader()->GetString(1);
+			textBox2->Text = ar.getReader()->GetString(2);
+			textBox3->Text = ar.getReader()->GetString(3);
+			textBox4->Text = Convert::ToString(ar.getReader()->GetInt32(7));
+			textBox5->Text = Convert::ToString(ar.getReader()->GetInt32(5));
+			textBox6->Text = Convert::ToString(ar.getReader()->GetInt32(6));
+			textBox8->Text = Convert::ToString(ar.getReader()->GetDouble(4));
 
 		}
-		con->Close();
-		SqlDataAdapter^ da = gcnew SqlDataAdapter(ar->afficher(ar->getID()), con);
-		DataTable^ dt = gcnew DataTable();
-		dt->Clear();
-		da->Fill(dt);
-		bindingSource2->DataSource = dt;
+		bindingSource2->DataSource = ar.getData();
 		dataGridView2->DataSource = bindingSource2;
 	}
 	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-		SqlConnection^ con = gcnew SqlConnection("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
-		SqlDataAdapter^ sda = gcnew SqlDataAdapter("SELECT * FROM Article", con);
-		DataTable^ dt = gcnew DataTable();
+		Gestion_Article ar(textBox2->Text);
+		ar.Afficher_tous();
 		dataGridView2->Hide();
 		dataGridView1->Show();
-		sda->Fill(dt);
-		bindingSource1->DataSource = dt;
+		bindingSource1->DataSource = ar.getData();
 		dataGridView1->DataSource = bindingSource1;
 	}
 	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	};
+	private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }

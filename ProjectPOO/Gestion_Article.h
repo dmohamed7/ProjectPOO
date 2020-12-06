@@ -10,6 +10,7 @@ public:
     Gestion_Article::Gestion_Article(String^ ref, String^ Nom, String^ couleur, double uht, int ttc, int QT, int seuil, int id);
     Gestion_Article::Gestion_Article();
     Gestion_Article(int id);
+    Gestion_Article(String^ n);
     void Afficher();
     void Afficher_tous();
     void Ajouter();

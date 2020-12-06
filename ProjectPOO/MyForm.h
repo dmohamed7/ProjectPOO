@@ -208,7 +208,6 @@ namespace ProjectPOO {
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		Gcommande^ gcom = gcnew Gcommande;
-
 		gcom->Show();
 
 	}

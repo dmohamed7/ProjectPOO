@@ -103,11 +103,11 @@ namespace NS_Composants
     }
     String^ CArticle::ajouter(String^ a,String^ b,String^ c,double g,int d,int e, int f)
     {
-        return "INSERT INTO Article(Reference_Article,Designation,Couleur,Prix_HT ,Taux_TVA,Quantite_en_Stock,Seuil_de_reapprovisionnement) values('" + a + "','" + b + "','" + c + "','" + g +"','"+ d +"','"+ e +"','"+ f +"');";
+        return "INSERT INTO Article(Reference_Article,Designation,Couleur,Prix_HT ,Taux_TVA,Quantite_en_Stock,Seuil_de_reapprovisionnement) values('" + a + "','" + b + "','" + c + "'," + g.ToString()->Replace(",",".") + ",'"+ d +"','"+ e +"','"+ f +"');";
     }
     String^ CArticle::modifier(String^ a,String^ b,String^ c,double g ,int d ,int e,int f,int id)
     {
-        return "UPDATE Article SET Reference_Article = '" + a + "', Designation = '" + b + "', Couleur = '" + c + "',Prix_HT = '" + g +"' ,Taux_TVA = '" + d + "',Quantite_en_Stock ='" + e +"',Seuil_de_reapprovisionnement ='" + f +"' WHERE ID_Article = " + id + "";
+        return "UPDATE Article SET Reference_Article = '" + a + "', Designation = '" + b + "', Couleur = '" + c + "',Prix_HT = " + g.ToString()->Replace(",", ".") + " ,Taux_TVA = '" + d + "',Quantite_en_Stock ='" + e +"',Seuil_de_reapprovisionnement ='" + f +"' WHERE ID_Article = " + id + "";
     }
     String^ CArticle::supprimer(int d)
     {

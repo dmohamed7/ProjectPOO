@@ -42,6 +42,11 @@ Gestion_Article::Gestion_Article(int id)
     ar->setID(id);
 }
 
+Gestion_Article::Gestion_Article(String^ n)
+{
+    ar->setNom_article(n);
+}
+
 
 
 void Gestion_Article::Afficher()
