@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Gestion_Stat.h"
 namespace ProjectPOO {
 
 	using namespace System;
@@ -12,8 +12,11 @@ namespace ProjectPOO {
 	/// <summary>
 	/// Description résumée de Gstatistique
 	/// </summary>
+	
 	public ref class Gstatistique : public System::Windows::Forms::Form
 	{
+	private:
+		Service::SVC_Gstat^ gstat = gcnew Service::SVC_Gstat();
 	public:
 		Gstatistique(void)
 		{
@@ -278,21 +281,21 @@ namespace ProjectPOO {
 private: System::Void dataGridView3_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
 private: System::Void Gstatistique_Load(System::Object^ sender, System::EventArgs^ e) {
-	this->label6->Text = Gestion_Stat::calculchiffreaffaire(debut->Value, fin->Value);
-	dataGridView1->DataSource = Gestion_Stat::produitsouseuil();
-	dataGridView2->DataSource = Gestion_Stat::topvendu();
-	dataGridView3->DataSource = Gestion_Stat::flopvendu();
-	this->label7->Text = "Panier moyen : " + Gestion_Stat::calculpaniermoyen();
+	this->label6->Text = this->gstat->calculchiffreaffaire(debut->Value, fin->Value).ToString();
+	dataGridView1->DataSource = this->gstat->produitsousseuil();
+	dataGridView2->DataSource = this->gstat->topvendu();
+	dataGridView3->DataSource = this->gstat->flopvendu();
+	this->label7->Text = "Panier moyen : " + this->gstat->calculpaniermoyen();
 }
 private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
-	comboBox1->DataSource = Gestion_Stat::clientliste();
+	comboBox1->DataSource = this->gstat->clientliste();
 	comboBox1->ValueMember = "id_client";
 	comboBox1->DisplayMember = "client";
 
 
 }
 private: System::Void comboBox1_DropDownClosed(System::Object^ sender, System::EventArgs^ e) {
-	this->label5->Text = Gestion_Stat::calcultotalachatclient(Convert::ToInt32(comboBox1->SelectedValue)).ToString();
+	this->label5->Text = this->gstat->calcultotalachatclient(Convert::ToInt32(comboBox1->SelectedValue)).ToString();
 }
 };
 }

@@ -47,5 +47,8 @@ public:
 
     System::Data::SqlClient::SqlCommand^ getCmdDataBase();
     SqlCommand^ getCmdDataBasee();
+    int actionrowsID(String^ a);
+    DataTable^ getRows(String^ a);
+
 };
 

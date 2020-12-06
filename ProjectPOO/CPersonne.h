@@ -27,6 +27,7 @@ namespace NS_Composants
 		virtual String^ creer(String^, String^, String^);
 		String^ supprimer(int a);
 		virtual String^ afficher(int a);
+	
 
 
 

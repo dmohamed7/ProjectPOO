@@ -3,12 +3,13 @@
 namespace Service {
 	using namespace System;
 	using namespace System::Data;
-	ref class SVC_Gstat : public SQL
+	
+	ref class SVC_Gstat
 	{
 	private:
 		
 	public:
-		NS_Composants::SQL^ cad = gcnew NS_Composants::SQL();
+		SQL^ cad =gcnew SQL();
 		SVC_Gstat();
 		float calculpaniermoyen();
 		float calculchiffreaffaire(DateTime^, DateTime^);

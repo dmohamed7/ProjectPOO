@@ -113,6 +113,28 @@ SqlCommand^ SQL::getCmdDataBasee()
     return this->cmdDataBas;
 }
 
+int SQL::actionrowsID(String^ a)
+{
+    cmdDataBase->CommandText = a;
+    int id = Convert::ToInt32(this->cmdDataBase->ExecuteScalar());
+    return id;
+
+}
+
+DataTable^ SQL::getRows(String^ a)
+{
+    setConstring("Data Source=DESKTOP-2RBCNA4;Initial Catalog=poo;Integrated Security=True");
+    setConDataBase(gcnew SqlConnection(getConstring()));
+    getConDataBase()->Open();
+    cmdDataBase = gcnew SqlCommand(a,getConDataBase());
+   
+    SqlDataAdapter^ da = gcnew SqlDataAdapter(cmdDataBase);
+    data = gcnew DataTable();
+    da->Fill(data);
+    return data;
+
+}
+
 SqlConnection^ SQL::getConDataBase()
 {
     return conDataBase;
