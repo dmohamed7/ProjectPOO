@@ -131,6 +131,7 @@
     <ClCompile Include="Gestion_Client.cpp" />
     <ClCompile Include="Gestion_Commande.cpp" />
     <ClCompile Include="Gestion_Personnel.cpp" />
+    <ClCompile Include="Gestion_Stat.cpp" />
     <ClCompile Include="Gpersonnel.cpp" />
     <ClCompile Include="Gstatistique.cpp" />
     <ClCompile Include="MyForm.cpp" />
@@ -158,6 +159,7 @@
     <ClInclude Include="Gestion_Client.h" />
     <ClInclude Include="Gestion_Commande.h" />
     <ClInclude Include="Gestion_Personnel.h" />
+    <ClInclude Include="Gestion_Stat.h" />
     <ClInclude Include="Gpersonnel.h">
       <FileType>CppForm</FileType>
     </ClInclude>
